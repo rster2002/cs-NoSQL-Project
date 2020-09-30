@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAL;
+using Model;
 
 namespace TestConsole {
     class Program {
@@ -12,11 +13,29 @@ namespace TestConsole {
             Program program = new Program();
             program.Start();
 
+            Console.WriteLine("End of Test Console...");
             Console.ReadKey();
         }
 
         public void Start() {
-            BaseRepo baseRepo = new BaseRepo();
+            User user = new User() {
+                Name = "A",
+                LastName = "B",
+                Email = "r@r.au",
+            };
+
+            Ticket ticket = new Ticket() {
+                Subject = "Test Ticket",
+                DateReported = DateTime.Now,
+                Deadline = Deadline.FourteenDays,
+                Priority = Priority.High,
+                ReportedByUser = user,
+                TypeOfIncident = IncidentType.Software,
+                Description = @"Testing whether or not the database will work",
+            };
+
+            TicketRepo ticketRepo = new TicketRepo();
+            ticketRepo.Add(ticket);
         }
     }
 }

@@ -43,7 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseRepo.cs" />
+    <Compile Include="IRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TicketRepo.cs" />
+    <Compile Include="UserRepo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Model\Model.csproj">
