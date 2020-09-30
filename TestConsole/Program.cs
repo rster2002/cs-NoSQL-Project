@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DAL;
 
 namespace TestConsole {
     class Program {
@@ -15,7 +16,7 @@ namespace TestConsole {
         }
 
         public void Start() {
-            Console.WriteLine(ConfigurationManager.ConnectionStrings["MongoDB"].ConnectionString);
+            BaseRepo baseRepo = new BaseRepo();
         }
     }
 }

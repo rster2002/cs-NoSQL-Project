@@ -1,23 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace View {
-    public partial class Form1: Form {
-        public Form1() {
+    public partial class UserControl1: UserControl {
+        public UserControl1() {
             InitializeComponent();
-
-            UserControl control = new UserControl1();
-            Controls.Clear();
-
-            control.Dock = DockStyle.Fill;
-            Controls.Add(control);
         }
     }
 }
