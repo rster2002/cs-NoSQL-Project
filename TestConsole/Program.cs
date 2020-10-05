@@ -18,6 +18,13 @@ namespace TestConsole {
         }
 
         public void Start() {
+            TicketRepo ticketRepo = new TicketRepo();
+            foreach (Ticket ticket in ticketRepo.GetAll()) {
+                Console.WriteLine(ticket);
+            }
+        }
+
+        public void StartA() {
             User user = new User() {
                 Name = "A",
                 LastName = "B",

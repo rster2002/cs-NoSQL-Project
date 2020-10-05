@@ -17,5 +17,16 @@ namespace Model {
         public Priority Priority { get; set; }
         public Deadline Deadline { get; set; }
         public string Description { get; set; }
+        public OpenState OpenStatus { get; set; }
+
+        public bool ValidateIntegraty() {
+            if (Id == null) return false;
+            if (DateReported == null) return false;
+            if (Subject == null) return false;
+            if (ReportedByUser == null) return false;
+            if (Description == null) return false;
+
+            return true;
+        }
     }
 }

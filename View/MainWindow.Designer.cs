@@ -1,5 +1,5 @@
 ﻿namespace View {
-    partial class Form1 {
+    partial class MainWindow {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -23,32 +23,44 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.mainPanel = new System.Windows.Forms.Panel();
+            this.mainMenuStrip = new System.Windows.Forms.MenuStrip();
             this.SuspendLayout();
             // 
-            // panel1
+            // mainPanel
             // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 450);
-            this.panel1.TabIndex = 0;
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.mainPanel.Location = new System.Drawing.Point(0, 27);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(800, 423);
+            this.mainPanel.TabIndex = 0;
             // 
-            // Form1
+            // mainMenuStrip
+            // 
+            this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
+            this.mainMenuStrip.Name = "mainMenuStrip";
+            this.mainMenuStrip.Size = new System.Drawing.Size(800, 24);
+            this.mainMenuStrip.TabIndex = 1;
+            this.mainMenuStrip.Text = "menuStrip1";
+            // 
+            // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panel1);
-            this.Name = "Form1";
+            this.Controls.Add(this.mainPanel);
+            this.Controls.Add(this.mainMenuStrip);
+            this.Name = "MainWindow";
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel mainPanel;
+        private System.Windows.Forms.MenuStrip mainMenuStrip;
     }
 }
 

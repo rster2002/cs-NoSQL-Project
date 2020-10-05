@@ -5,10 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Model {
-    public enum Deadline {
-        SevenDays = 7,
-        FourteenDays = 14,
-        TwentyEightDays = 28,
-        SixMonths = 183,
+    public enum OpenState {
+        Open,
+        Closed,
+        Reopened,
     }
 }
