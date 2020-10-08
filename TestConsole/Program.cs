@@ -4,8 +4,10 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using DAL;
 using Model;
+using View.components;
 
 namespace TestConsole {
     class Program {
@@ -18,31 +20,12 @@ namespace TestConsole {
         }
 
         public void Start() {
-            TicketRepo ticketRepo = new TicketRepo();
-            foreach (Ticket ticket in ticketRepo.GetAll()) {
-                Console.WriteLine(ticket);
-            }
-        }
+            Form window = new Form();
+            CreateTicketComponent createTicketComponent = new CreateTicketComponent();
+            createTicketComponent.Dock = DockStyle.Fill;
+            window.Controls.Add(createTicketComponent);
 
-        public void StartA() {
-            User user = new User() {
-                Name = "A",
-                LastName = "B",
-                Email = "r@r.au",
-            };
-
-            Ticket ticket = new Ticket() {
-                Subject = "Test Ticket",
-                DateReported = DateTime.Now,
-                Deadline = Deadline.FourteenDays,
-                Priority = Priority.High,
-                ReportedByUser = user,
-                TypeOfIncident = IncidentType.Software,
-                Description = @"Testing whether or not the database will work",
-            };
-
-            TicketRepo ticketRepo = new TicketRepo();
-            ticketRepo.Add(ticket);
+            window.ShowDialog();
         }
     }
 }

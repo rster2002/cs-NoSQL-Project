@@ -7,7 +7,7 @@ using DAL;
 using Model;
 
 namespace Service {
-    class TicketService {
+    public class TicketService {
         private TicketRepo TicketRepo = new TicketRepo();
 
         public void AddTicket(Ticket ticket) => TicketRepo.Add(ticket);

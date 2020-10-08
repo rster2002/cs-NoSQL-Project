@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="components\CreateTicketComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="components\CreateTicketComponent.Designer.cs">
+      <DependentUpon>CreateTicketComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="components\SelectUserComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="components\SelectUserComponent.Designer.cs">
+      <DependentUpon>SelectUserComponent.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +66,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="components\CreateTicketComponent.resx">
+      <DependentUpon>CreateTicketComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="components\SelectUserComponent.resx">
+      <DependentUpon>SelectUserComponent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
