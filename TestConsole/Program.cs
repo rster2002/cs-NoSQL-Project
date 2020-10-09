@@ -22,6 +22,7 @@ namespace TestConsole {
         public void Start() {
             Form window = new Form();
             CreateTicketComponent createTicketComponent = new CreateTicketComponent();
+
             createTicketComponent.Dock = DockStyle.Fill;
             window.Controls.Add(createTicketComponent);
 

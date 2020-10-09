@@ -66,6 +66,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="views\CreateTicketView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\CreateTicketView.Designer.cs">
+      <DependentUpon>CreateTicketView.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="components\CreateTicketComponent.resx">
       <DependentUpon>CreateTicketComponent.cs</DependentUpon>
     </EmbeddedResource>
@@ -84,6 +90,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="views\CreateTicketView.resx">
+      <DependentUpon>CreateTicketView.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="connections.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

@@ -8,11 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using View.views;
 
 namespace View {
     public partial class MainWindow: Form {
         public MainWindow() {
             InitializeComponent();
+            LoadView(new CreateTicketView());
         }
 
         public void LoadView(UserControl userControl) {

@@ -31,6 +31,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.typeOfIncidentComboBox = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.selectUserButton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.priorityComboBox = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -39,7 +40,6 @@
             this.descriptionTextBox = new System.Windows.Forms.TextBox();
             this.confirmButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.selectUserButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,6 +97,7 @@
             this.dateTimeReportedPicker.Name = "dateTimeReportedPicker";
             this.dateTimeReportedPicker.Size = new System.Drawing.Size(265, 20);
             this.dateTimeReportedPicker.TabIndex = 1;
+            this.dateTimeReportedPicker.ValueChanged += new System.EventHandler(this.UpdateButtonEnabled);
             // 
             // label2
             // 
@@ -145,6 +146,17 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Reported by user:";
             // 
+            // selectUserButton
+            // 
+            this.selectUserButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.selectUserButton.Location = new System.Drawing.Point(135, 82);
+            this.selectUserButton.MinimumSize = new System.Drawing.Size(0, 21);
+            this.selectUserButton.Name = "selectUserButton";
+            this.selectUserButton.Size = new System.Drawing.Size(265, 21);
+            this.selectUserButton.TabIndex = 7;
+            this.selectUserButton.Text = "Select user";
+            this.selectUserButton.UseVisualStyleBackColor = true;
+            // 
             // label5
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -163,6 +175,7 @@
             this.priorityComboBox.Name = "priorityComboBox";
             this.priorityComboBox.Size = new System.Drawing.Size(265, 21);
             this.priorityComboBox.TabIndex = 8;
+            this.priorityComboBox.SelectedIndexChanged += new System.EventHandler(this.UpdateButtonEnabled);
             // 
             // label6
             // 
@@ -183,6 +196,7 @@
             this.deadlineComboBox.Name = "deadlineComboBox";
             this.deadlineComboBox.Size = new System.Drawing.Size(265, 21);
             this.deadlineComboBox.TabIndex = 11;
+            this.deadlineComboBox.SelectedValueChanged += new System.EventHandler(this.UpdateButtonEnabled);
             // 
             // label7
             // 
@@ -200,10 +214,12 @@
             this.descriptionTextBox.Name = "descriptionTextBox";
             this.descriptionTextBox.Size = new System.Drawing.Size(265, 133);
             this.descriptionTextBox.TabIndex = 12;
+            this.descriptionTextBox.TextChanged += new System.EventHandler(this.UpdateButtonEnabled);
             // 
             // confirmButton
             // 
             this.confirmButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.confirmButton.Enabled = false;
             this.confirmButton.Location = new System.Drawing.Point(135, 302);
             this.confirmButton.Name = "confirmButton";
             this.confirmButton.Size = new System.Drawing.Size(265, 36);
@@ -221,17 +237,6 @@
             this.cancelButton.TabIndex = 15;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
-            // 
-            // selectUserButton
-            // 
-            this.selectUserButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.selectUserButton.Location = new System.Drawing.Point(135, 82);
-            this.selectUserButton.MinimumSize = new System.Drawing.Size(0, 21);
-            this.selectUserButton.Name = "selectUserButton";
-            this.selectUserButton.Size = new System.Drawing.Size(265, 21);
-            this.selectUserButton.TabIndex = 7;
-            this.selectUserButton.Text = "Select user";
-            this.selectUserButton.UseVisualStyleBackColor = true;
             // 
             // CreateTicketComponent
             // 
