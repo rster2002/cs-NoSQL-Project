@@ -29,10 +29,10 @@
             // 
             // mainPanel
             // 
-            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.mainPanel.Location = new System.Drawing.Point(0, 27);
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPanel.Location = new System.Drawing.Point(0, 24);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(800, 423);
+            this.mainPanel.Size = new System.Drawing.Size(800, 426);
             this.mainPanel.TabIndex = 0;
             // 
             // mainMenuStrip

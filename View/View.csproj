@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="components\CreateTicketComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="components\CreateTicketComponent.Designer.cs">
+      <DependentUpon>CreateTicketComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="components\SelectUserComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="components\SelectUserComponent.Designer.cs">
+      <DependentUpon>SelectUserComponent.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +66,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="views\CreateTicketView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\CreateTicketView.Designer.cs">
+      <DependentUpon>CreateTicketView.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="components\CreateTicketComponent.resx">
+      <DependentUpon>CreateTicketComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="components\SelectUserComponent.resx">
+      <DependentUpon>SelectUserComponent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -66,6 +90,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="views\CreateTicketView.resx">
+      <DependentUpon>CreateTicketView.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="connections.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
