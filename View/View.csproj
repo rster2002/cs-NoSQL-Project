@@ -58,6 +58,12 @@
     <Compile Include="components\SelectUserComponent.Designer.cs">
       <DependentUpon>SelectUserComponent.cs</DependentUpon>
     </Compile>
+    <Compile Include="components\TicketDetailsComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="components\TicketDetailsComponent.Designer.cs">
+      <DependentUpon>TicketDetailsComponent.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="components\SelectUserComponent.resx">
       <DependentUpon>SelectUserComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="components\TicketDetailsComponent.resx">
+      <DependentUpon>TicketDetailsComponent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
