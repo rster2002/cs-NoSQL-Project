@@ -32,6 +32,12 @@ namespace View.components {
             { Deadline.SixMonths, Color.FromArgb(255, 105, 245, 175) },
         };
 
+        private Dictionary<IncidentType, Color> incidentTypeColorMap = new Dictionary<IncidentType, Color>() {
+            { IncidentType.Hardware, Color.FromArgb(255, 230, 132, 67) },
+            { IncidentType.Software, Color.FromArgb(255, 68, 157, 235) },
+            { IncidentType.Service, Color.FromArgb(255, 68, 235, 124) },
+        };
+
         public TicketDetailsComponent(Ticket ticket) {
             this.ticket = ticket;
 
@@ -40,7 +46,7 @@ namespace View.components {
         }
 
         private void FillControls() {
-            ticketSubjectLabel.Text = ticket.Subject;
+            ticketSubjectLabel.Text = "Subject: " + ticket.Subject;
 
             priorityBackground.BackColor = priorityColorMap[ticket.Priority];
             priorityLabel.Text = "Priority: " + ticket.Priority.ToString();
@@ -49,7 +55,18 @@ namespace View.components {
             deadlineBackground.BackColor = deadlineColorMap[ticket.Deadline];
             deadlineLabel.Text = "Deadline: " + deadlineString;
 
+            reportedByLabel.Text = "Reported by: " + ticket.ReportedByUser.ToString();
+
+            reportedAtBackground.BackColor = ticket.IsOverdue(DateTime.Now) ? Color.Red : Color.Green;
+            reportedAtLabel.Text = "Date reported: " + ticket.DateReported.ToString("dd/MM/yyyy");
+
             descriptionBox.Text = ticket.Description;
+
+            incidentTypeBackground.BackColor = incidentTypeColorMap[ticket.TypeOfIncident];
+            incidentTypeLabel.Text = ticket.TypeOfIncident.ToString();
+
+            statusBackground.BackColor = ticket.OpenStatus == OpenState.Closed ? Color.Red : Color.Green;
+            statusLabel.Text = ticket.OpenStatus.ToString().ToUpper();
         }
     }
 }
