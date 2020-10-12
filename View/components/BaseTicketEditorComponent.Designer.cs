@@ -1,5 +1,5 @@
 ﻿namespace View.components {
-    partial class CreateTicketComponent {
+    partial class BaseTicketEditorComponent {
         /// <summary> 
         /// Required designer variable.
         /// </summary>
@@ -237,13 +237,14 @@
             this.cancelButton.TabIndex = 15;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.CancelButtonOnClick);
             // 
-            // CreateTicketComponent
+            // BaseTicketEditorComponent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "CreateTicketComponent";
+            this.Name = "BaseTicketEditorComponent";
             this.Size = new System.Drawing.Size(403, 341);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

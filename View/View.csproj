@@ -46,11 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="components\ChangeTicketComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="components\CreateTicketComponent.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="components\CreateTicketComponent.Designer.cs">
-      <DependentUpon>CreateTicketComponent.cs</DependentUpon>
+    <Compile Include="components\BaseTicketEditorComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="components\BaseTicketEditorComponent.Designer.cs">
+      <DependentUpon>BaseTicketEditorComponent.cs</DependentUpon>
     </Compile>
     <Compile Include="components\SelectUserComponent.cs">
       <SubType>UserControl</SubType>
@@ -78,8 +84,8 @@
     <Compile Include="views\CreateTicketView.Designer.cs">
       <DependentUpon>CreateTicketView.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="components\CreateTicketComponent.resx">
-      <DependentUpon>CreateTicketComponent.cs</DependentUpon>
+    <EmbeddedResource Include="components\BaseTicketEditorComponent.resx">
+      <DependentUpon>BaseTicketEditorComponent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="components\SelectUserComponent.resx">
       <DependentUpon>SelectUserComponent.cs</DependentUpon>
