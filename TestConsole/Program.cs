@@ -26,7 +26,7 @@ namespace TestConsole {
                 Subject = "Why even bother?",
                 Priority = Priority.High,
                 Deadline = Deadline.SevenDays,
-                Description = "Something's not working as it should because why would it finally actually work this stupid piece of shit. How is windows forms actually something you'd want to work with? Are you insane?! Do you hate yourself that much? Aparently you do. Why not use a actual technology stack that doesn't want to make you want to down yourself in hot goat piss?",
+                Description = "Something's not working as it should because why would it finally actually work this stupid piece of shit. How is windows forms actually something you'd want to work with? Are you insane?! Do you hate yourself that much? Aparently you do. Why not use a actual technology stack that doesn't want to make you want to drown yourself in hot goat piss?",
                 ReportedByUser = new User() {
                     Name = "Me",
                     LastName = "Ville",
