@@ -7,10 +7,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace View.components {
-    public class CreateTicketComponent: BaseTicketEditorComponent {
+    public class ChangeTicketComponent: BaseTicketEditorComponent {
         TicketService ticketService = new TicketService();
 
-        public event EventHandler<TicketEditEventArgs> OnTicketCreatedEvent;
+        public event EventHandler<TicketEditEventArgs> OnTicketChangedEvent;
         public event EventHandler OnCancelEvent;
 
         protected override void OnCancel() {
@@ -18,8 +18,8 @@ namespace View.components {
         }
 
         protected override void OnConfirm(Ticket ticket) {
-            ticketService.AddTicket(ticket);
-            OnTicketCreatedEvent.Invoke(this, new TicketEditEventArgs(ticket));
+            ticketService.UpdateTicket(ticket);
+            OnTicketChangedEvent.Invoke(this, new TicketEditEventArgs(ticket));
         }
     }
 }
