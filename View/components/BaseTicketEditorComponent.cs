@@ -14,6 +14,7 @@ using System.Security.Cryptography.X509Certificates;
 namespace View.components {
     public abstract partial class BaseTicketEditorComponent: UserControl {
         private TicketService ticketService = new TicketService();
+        private User selectedUser;
 
         public BaseTicketEditorComponent() {
             Dock = DockStyle.Fill;
@@ -57,6 +58,7 @@ namespace View.components {
             if (typeOfIncidentOption == null) return false;
             if (priorityOption == null) return false;
             if (deadlineOption == null) return false;
+            if (selectedUser == null) return false;
 
             return true;
         }
@@ -82,6 +84,7 @@ namespace View.components {
                 Subject = subject,
                 TypeOfIncident = incidentType,
                 Description = description,
+                ReportedByUser = selectedUser,
             };
 
             OnConfirm(ticket);
@@ -89,6 +92,23 @@ namespace View.components {
 
         private void CancelButtonOnClick(object sender, EventArgs e) {
             OnCancel();
+        }
+
+        private void SelectUserButtonOnClick(object sender, EventArgs _) {
+            SelectUserComponent selectUserComponent = new SelectUserComponent();
+            Popup popup = new Popup(selectUserComponent);
+
+            // Add event handlers
+            selectUserComponent.OnCancelEvent += (s, e) => popup.Close();
+            selectUserComponent.OnUserSelectedEvent += (s, e) => {
+                selectedUser = e.selectedUser;
+                UpdateButtonEnabled(s, e);
+
+                selectUserButton.Text = e.selectedUser.ToString();
+                popup.Close();
+            };
+
+            popup.ShowDialog();
         }
 
         protected abstract void OnCancel();

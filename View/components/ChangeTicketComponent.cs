@@ -10,16 +10,16 @@ namespace View.components {
     public class ChangeTicketComponent: BaseTicketEditorComponent {
         TicketService ticketService = new TicketService();
 
+        public event EventHandler<TicketEditEventArgs> OnTicketChangedEvent;
         public event EventHandler OnCancelEvent;
-        public event EventHandler OnConfirmEvent;
 
         protected override void OnCancel() {
             OnCancelEvent.Invoke(this, new EventArgs());
         }
 
         protected override void OnConfirm(Ticket ticket) {
-            OnConfirmEvent.Invoke(this, new EventArgs());
             ticketService.UpdateTicket(ticket);
+            OnTicketChangedEvent.Invoke(this, new TicketEditEventArgs(ticket));
         }
     }
 }

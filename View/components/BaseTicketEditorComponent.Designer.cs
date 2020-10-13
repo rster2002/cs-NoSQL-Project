@@ -156,6 +156,7 @@
             this.selectUserButton.TabIndex = 7;
             this.selectUserButton.Text = "Select user";
             this.selectUserButton.UseVisualStyleBackColor = true;
+            this.selectUserButton.Click += new System.EventHandler(this.SelectUserButtonOnClick);
             // 
             // label5
             // 

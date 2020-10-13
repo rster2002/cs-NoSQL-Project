@@ -98,6 +98,7 @@
             this.columnHeader2,
             this.columnHeader3});
             this.userListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userListView.FullRowSelect = true;
             this.userListView.HideSelection = false;
             this.userListView.Location = new System.Drawing.Point(3, 43);
             this.userListView.MultiSelect = false;
@@ -106,6 +107,7 @@
             this.userListView.TabIndex = 1;
             this.userListView.UseCompatibleStateImageBehavior = false;
             this.userListView.View = System.Windows.Forms.View.Details;
+            this.userListView.SelectedIndexChanged += new System.EventHandler(this.UserListViewOnSelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -141,6 +143,7 @@
             // confirmButton
             // 
             this.confirmButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.confirmButton.Enabled = false;
             this.confirmButton.Location = new System.Drawing.Point(173, 3);
             this.confirmButton.Name = "confirmButton";
             this.confirmButton.Size = new System.Drawing.Size(164, 35);
@@ -158,6 +161,7 @@
             this.cancelButton.TabIndex = 1;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.CancelButtonOnClick);
             // 
             // SelectUserComponent
             // 

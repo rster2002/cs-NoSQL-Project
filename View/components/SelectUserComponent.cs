@@ -42,7 +42,21 @@ namespace View.components {
         }
 
         private void ConfirmButtonOnClick(object sender, EventArgs e) {
-            
+            ListViewItem item = userListView.SelectedItems[0];
+            User user = (User) item.Tag;
+
+            OnUserSelectedEvent.Invoke(this, new UserSelectedEventArgs(user));
+        }
+
+        private void CancelButtonOnClick(object sender, EventArgs e) {
+            OnCancelEvent.Invoke(this, new EventArgs());
+        }
+
+        private void UserListViewOnSelectedIndexChanged(object sender, EventArgs e) {
+            ListViewItem item = userListView.SelectedItems[0];
+            if (item == null) return;
+
+            confirmButton.Enabled = true;
         }
 
         private void UserSearchTextBoxOnChange(object sender, EventArgs e) {

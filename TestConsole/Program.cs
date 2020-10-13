@@ -20,24 +20,17 @@ namespace TestConsole {
         }
 
         public void Start() {
-            //UserRepo userRepo = new UserRepo();
-            //userRepo.Add(new User() {
-            //    Name = "Jack",
-            //    LastName = "Sparrow",
-            //    Email = "blackpearl@pirate.car",
-            //    Username = "CaptainJack",
-            //    UserType = UserType.Normal,
-            //    PasswordHash = "05ffb3697804f5520e368b7c1228de79c1df98d888bbb498f1e3a4834a45a214",
-            //    Salt = 8228422,
-            //});
-
             Form window = new Form();
-            SelectUserComponent selectUserComponent = new SelectUserComponent();
+            CreateTicketComponent createTicketComponent = new CreateTicketComponent();
 
+            createTicketComponent.OnCancelEvent += (s, e) => window.Close();
+            createTicketComponent.OnTicketCreatedEvent += (s, e) => {
+                Console.WriteLine(e.ticket.Subject);
+                window.Close();
+            };
 
-            selectUserComponent.Dock = DockStyle.Fill;
-
-            window.Controls.Add(selectUserComponent);
+            createTicketComponent.Dock = DockStyle.Fill;
+            window.Controls.Add(createTicketComponent);
             window.ShowDialog();
         }
     }

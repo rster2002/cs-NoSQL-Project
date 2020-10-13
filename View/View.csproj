@@ -58,6 +58,9 @@
     <Compile Include="components\BaseTicketEditorComponent.Designer.cs">
       <DependentUpon>BaseTicketEditorComponent.cs</DependentUpon>
     </Compile>
+    <Compile Include="components\Popup.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="components\SelectUserComponent.cs">
       <SubType>UserControl</SubType>
     </Compile>
