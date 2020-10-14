@@ -48,12 +48,13 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(346, 396);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(515, 613);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -64,30 +65,33 @@
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.userSearchTextBox, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 5);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(340, 34);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 52F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(510, 52);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 10);
+            this.label1.Location = new System.Drawing.Point(4, 16);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 13);
+            this.label1.Size = new System.Drawing.Size(122, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Search for user:";
             // 
             // userSearchTextBox
             // 
             this.userSearchTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.userSearchTextBox.Location = new System.Drawing.Point(173, 7);
+            this.userSearchTextBox.Location = new System.Drawing.Point(259, 13);
+            this.userSearchTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.userSearchTextBox.Name = "userSearchTextBox";
-            this.userSearchTextBox.Size = new System.Drawing.Size(164, 20);
+            this.userSearchTextBox.Size = new System.Drawing.Size(244, 26);
             this.userSearchTextBox.TabIndex = 1;
             this.userSearchTextBox.TextChanged += new System.EventHandler(this.UserSearchTextBoxOnChange);
             // 
@@ -100,10 +104,11 @@
             this.userListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.userListView.FullRowSelect = true;
             this.userListView.HideSelection = false;
-            this.userListView.Location = new System.Drawing.Point(3, 43);
+            this.userListView.Location = new System.Drawing.Point(4, 67);
+            this.userListView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.userListView.MultiSelect = false;
             this.userListView.Name = "userListView";
-            this.userListView.Size = new System.Drawing.Size(340, 303);
+            this.userListView.Size = new System.Drawing.Size(510, 464);
             this.userListView.TabIndex = 1;
             this.userListView.UseCompatibleStateImageBehavior = false;
             this.userListView.View = System.Windows.Forms.View.Details;
@@ -122,7 +127,7 @@
             // columnHeader3
             // 
             this.columnHeader3.Text = "Email address";
-            this.columnHeader3.Width = 106;
+            this.columnHeader3.Width = 223;
             // 
             // tableLayoutPanel3
             // 
@@ -132,21 +137,23 @@
             this.tableLayoutPanel3.Controls.Add(this.confirmButton, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.cancelButton, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 352);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 541);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(340, 41);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(510, 67);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
             // confirmButton
             // 
             this.confirmButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.confirmButton.Enabled = false;
-            this.confirmButton.Location = new System.Drawing.Point(173, 3);
+            this.confirmButton.Location = new System.Drawing.Point(259, 5);
+            this.confirmButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.confirmButton.Name = "confirmButton";
-            this.confirmButton.Size = new System.Drawing.Size(164, 35);
+            this.confirmButton.Size = new System.Drawing.Size(247, 57);
             this.confirmButton.TabIndex = 0;
             this.confirmButton.Text = "Confirm";
             this.confirmButton.UseVisualStyleBackColor = true;
@@ -155,9 +162,10 @@
             // cancelButton
             // 
             this.cancelButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cancelButton.Location = new System.Drawing.Point(3, 3);
+            this.cancelButton.Location = new System.Drawing.Point(4, 5);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(164, 35);
+            this.cancelButton.Size = new System.Drawing.Size(247, 57);
             this.cancelButton.TabIndex = 1;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
@@ -165,11 +173,13 @@
             // 
             // SelectUserComponent
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MinimumSize = new System.Drawing.Size(515, 613);
             this.Name = "SelectUserComponent";
-            this.Size = new System.Drawing.Size(346, 396);
+            this.Size = new System.Drawing.Size(515, 613);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();

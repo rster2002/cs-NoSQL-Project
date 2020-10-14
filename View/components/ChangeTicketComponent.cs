@@ -10,6 +10,10 @@ namespace View.components {
     public class ChangeTicketComponent: BaseTicketEditorComponent {
         TicketService ticketService = new TicketService();
 
+        public ChangeTicketComponent(Ticket ticket) {
+            LoadTicket(ticket);
+        }
+
         public event EventHandler<TicketEditEventArgs> OnTicketChangedEvent;
         public event EventHandler OnCancelEvent;
 

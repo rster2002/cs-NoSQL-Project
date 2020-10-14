@@ -10,11 +10,13 @@ using System.Windows.Forms;
 using Model;
 using Service;
 using System.Security.Cryptography.X509Certificates;
+using System.Runtime.Remoting.Channels;
 
 namespace View.components {
     public abstract partial class BaseTicketEditorComponent: UserControl {
         private TicketService ticketService = new TicketService();
         private User selectedUser;
+        private string ticketId;
 
         public BaseTicketEditorComponent() {
             Dock = DockStyle.Fill;
@@ -63,6 +65,47 @@ namespace View.components {
             return true;
         }
 
+        private void SetTypeOfIncidentComboBoxValue(IncidentType incidentType) {
+            foreach (ComboBoxOption option in typeOfIncidentComboBox.Items) { 
+                if ((IncidentType) option.Value == incidentType) {
+                    typeOfIncidentComboBox.SelectedItem = option;
+                }
+            }
+        }
+
+        private void SetPriorityComboBoxValue(Priority priority) {
+            foreach (ComboBoxOption option in priorityComboBox.Items) {
+                if ((Priority) option.Value == priority) {
+                    priorityComboBox.SelectedItem = option;
+                }
+            }
+        }
+
+        private void SetDeadlineComboBoxValue(Deadline deadline) {
+            foreach (ComboBoxOption option in deadlineComboBox.Items) {
+                if ((Deadline) option.Value == deadline) {
+                    deadlineComboBox.SelectedItem = option;
+                }
+            }
+        }
+
+        protected void LoadTicket(Ticket ticket) {
+            if (ticket.Id != null) ticketId = ticket.Id;
+            if (ticket.Subject != null) subjectTextBox.Text = ticket.Subject;
+            if (ticket.Description != null) descriptionTextBox.Text = ticket.Description;
+
+            SetTypeOfIncidentComboBoxValue(ticket.TypeOfIncident);
+            SetPriorityComboBoxValue(ticket.Priority);
+            SetDeadlineComboBoxValue(ticket.Deadline);
+
+            dateTimeReportedPicker.Value = ticket.DateReported;
+
+            if (ticket.ReportedByUser != null) {
+                selectUserButton.Text = ticket.ReportedByUser.ToString();
+                selectedUser = ticket.ReportedByUser;
+            }
+        }
+
         private void ConfirmButtonOnClick(object sender, EventArgs e) {
             DateTime reportedAt = dateTimeReportedPicker.Value;
             string subject = subjectTextBox.Text;
@@ -78,6 +121,7 @@ namespace View.components {
             string description = descriptionTextBox.Text;
 
             Ticket ticket = new Ticket() {
+                Id = ticketId,
                 DateReported = reportedAt,
                 Deadline = deadline,
                 Priority = priority,

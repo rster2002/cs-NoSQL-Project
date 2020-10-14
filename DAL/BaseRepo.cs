@@ -36,7 +36,10 @@ namespace DAL {
         }
 
         public void Update(T entity) {
-            collection.ReplaceOne(item => item.Id == entity.Id, entity);
+            if (entity.Id == null) throw new Exception("IEntity.Id cannot be null");
+
+            FilterDefinition<T> filterDefinition = Builders<T>.Filter.Eq(item => item.Id, entity.Id); ;
+            collection.ReplaceOne(filterDefinition, entity);
         }
 
         public void AddMultiple(T[] entities) {
