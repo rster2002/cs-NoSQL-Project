@@ -21,15 +21,17 @@ namespace TestConsole {
 
         public void Start() {
             TicketRepo ticketRepo = new TicketRepo();
-            Ticket ticket = ticketRepo.GetAll().First();
 
             Form window = new Form();
-            ChangeTicketComponent changeTicketComponent = new ChangeTicketComponent(ticket);
+            TicketListView ticketListView = new TicketListView(ticketRepo.GetAll().ToList());
+            ticketListView.Dock = DockStyle.Fill;
 
-            changeTicketComponent.OnCancelEvent += (s, e) => window.Close();
-            changeTicketComponent.OnTicketChangedEvent += (s, e) => window.Close();
+            ticketListView.OnTicketSelectedEvent += (s, e) => {
+                new Popup(new TicketDetailsComponent(e.selectedTicket))
+                    .ShowDialog();
+            };
 
-            window.Controls.Add(changeTicketComponent);
+            window.Controls.Add(ticketListView);
             window.ShowDialog();
         }
     }

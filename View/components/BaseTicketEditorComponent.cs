@@ -41,6 +41,11 @@ namespace View.components {
             deadlineComboBox.Items.Add(new ComboBoxOption("14 days", Deadline.FourteenDays));
             deadlineComboBox.Items.Add(new ComboBoxOption("28 days", Deadline.TwentyEightDays));
             deadlineComboBox.Items.Add(new ComboBoxOption("6 months", Deadline.SixMonths));
+
+            // Populate the status Combo Box
+            statusComboBox.Items.Add(new ComboBoxOption("Open", OpenState.Open));
+            statusComboBox.Items.Add(new ComboBoxOption("Closed", OpenState.Closed));
+            statusComboBox.SelectedIndex = 0;
         }
 
         private void UpdateButtonEnabled(object sender, EventArgs e) {
@@ -155,7 +160,24 @@ namespace View.components {
             popup.ShowDialog();
         }
 
+        private void DeleteButtonOnClick(object sender, EventArgs e) {
+
+        }
+
+        protected void SetConfirmButtonText(string text) {
+            confirmButton.Text = text;
+        }
+
+        protected void AllowChangingOfStatus(bool allowChange) {
+            statusComboBox.Enabled = allowChange;
+        }
+
+        protected void AllowDeletionOfTicket(bool allowDeletion) {
+            deleteButton.Visible = allowDeletion;
+        }
+
         protected abstract void OnCancel();
         protected abstract void OnConfirm(Ticket ticket);
+        protected abstract void OnDeleteTicket();
     }
 }

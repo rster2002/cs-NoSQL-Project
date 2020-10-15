@@ -46,25 +46,33 @@ namespace View.components {
         }
 
         private void FillControls() {
+            // Subject
             ticketSubjectLabel.Text = "Subject: " + ticket.Subject;
 
+            // Priority
             priorityBackground.BackColor = priorityColorMap[ticket.Priority];
             priorityLabel.Text = "Priority: " + ticket.Priority.ToString();
 
+            // Deadline
             string deadlineString = deadlineStringMap[ticket.Deadline];
             deadlineBackground.BackColor = deadlineColorMap[ticket.Deadline];
             deadlineLabel.Text = "Deadline: " + deadlineString;
 
+            // Reported by
             reportedByLabel.Text = "Reported by: " + ticket.ReportedByUser.ToString();
 
+            // Date reported
             reportedAtBackground.BackColor = ticket.IsOverdue(DateTime.Now) ? Color.Red : Color.Green;
-            reportedAtLabel.Text = "Date reported: " + ticket.DateReported.ToString("dd/MM/yyyy");
+            reportedAtLabel.Text = "Date reported: " + ticket.DateReported.ToString("HH:mm dd/MM/yyyy");
 
+            // Description
             descriptionBox.Text = ticket.Description;
 
+            // Incident type
             incidentTypeBackground.BackColor = incidentTypeColorMap[ticket.TypeOfIncident];
             incidentTypeLabel.Text = ticket.TypeOfIncident.ToString();
 
+            // Status
             statusBackground.BackColor = ticket.OpenStatus == OpenState.Closed ? Color.Red : Color.Green;
             statusLabel.Text = ticket.OpenStatus.ToString().ToUpper();
         }

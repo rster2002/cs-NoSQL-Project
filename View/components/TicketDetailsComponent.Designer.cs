@@ -32,13 +32,13 @@
             this.deadlineLabel = new System.Windows.Forms.Label();
             this.reportedByBackground = new System.Windows.Forms.TableLayoutPanel();
             this.reportedByLabel = new System.Windows.Forms.Label();
-            this.descriptionBox = new System.Windows.Forms.TextBox();
             this.reportedAtBackground = new System.Windows.Forms.TableLayoutPanel();
             this.reportedAtLabel = new System.Windows.Forms.Label();
             this.incidentTypeBackground = new System.Windows.Forms.TableLayoutPanel();
             this.incidentTypeLabel = new System.Windows.Forms.Label();
             this.statusBackground = new System.Windows.Forms.TableLayoutPanel();
             this.statusLabel = new System.Windows.Forms.Label();
+            this.descriptionBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.priorityBackground.SuspendLayout();
@@ -111,15 +111,15 @@
             this.priorityBackground.Name = "priorityBackground";
             this.priorityBackground.RowCount = 1;
             this.priorityBackground.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.priorityBackground.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.priorityBackground.Size = new System.Drawing.Size(175, 28);
+            this.priorityBackground.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
+            this.priorityBackground.Size = new System.Drawing.Size(175, 29);
             this.priorityBackground.TabIndex = 0;
             // 
             // priorityLabel
             // 
             this.priorityLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.priorityLabel.AutoSize = true;
-            this.priorityLabel.Location = new System.Drawing.Point(70, 7);
+            this.priorityLabel.Location = new System.Drawing.Point(70, 8);
             this.priorityLabel.Name = "priorityLabel";
             this.priorityLabel.Size = new System.Drawing.Size(35, 13);
             this.priorityLabel.TabIndex = 0;
@@ -136,15 +136,15 @@
             this.deadlineBackground.Name = "deadlineBackground";
             this.deadlineBackground.RowCount = 1;
             this.deadlineBackground.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.deadlineBackground.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.deadlineBackground.Size = new System.Drawing.Size(175, 28);
+            this.deadlineBackground.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
+            this.deadlineBackground.Size = new System.Drawing.Size(175, 29);
             this.deadlineBackground.TabIndex = 2;
             // 
             // deadlineLabel
             // 
             this.deadlineLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.deadlineLabel.AutoSize = true;
-            this.deadlineLabel.Location = new System.Drawing.Point(70, 7);
+            this.deadlineLabel.Location = new System.Drawing.Point(70, 8);
             this.deadlineLabel.Name = "deadlineLabel";
             this.deadlineLabel.Size = new System.Drawing.Size(35, 13);
             this.deadlineLabel.TabIndex = 1;
@@ -158,33 +158,23 @@
             this.reportedByBackground.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.reportedByBackground.Controls.Add(this.reportedByLabel, 0, 0);
             this.reportedByBackground.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportedByBackground.Location = new System.Drawing.Point(3, 37);
+            this.reportedByBackground.Location = new System.Drawing.Point(3, 38);
             this.reportedByBackground.Name = "reportedByBackground";
             this.reportedByBackground.RowCount = 1;
             this.reportedByBackground.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.reportedByBackground.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.reportedByBackground.Size = new System.Drawing.Size(175, 28);
+            this.reportedByBackground.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
+            this.reportedByBackground.Size = new System.Drawing.Size(175, 29);
             this.reportedByBackground.TabIndex = 3;
             // 
             // reportedByLabel
             // 
             this.reportedByLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.reportedByLabel.AutoSize = true;
-            this.reportedByLabel.Location = new System.Drawing.Point(70, 7);
+            this.reportedByLabel.Location = new System.Drawing.Point(70, 8);
             this.reportedByLabel.Name = "reportedByLabel";
             this.reportedByLabel.Size = new System.Drawing.Size(35, 13);
             this.reportedByLabel.TabIndex = 0;
             this.reportedByLabel.Text = "label1";
-            // 
-            // descriptionBox
-            // 
-            this.descriptionBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.descriptionBox.Location = new System.Drawing.Point(3, 156);
-            this.descriptionBox.Multiline = true;
-            this.descriptionBox.Name = "descriptionBox";
-            this.descriptionBox.ReadOnly = true;
-            this.descriptionBox.Size = new System.Drawing.Size(362, 113);
-            this.descriptionBox.TabIndex = 2;
             // 
             // reportedAtBackground
             // 
@@ -193,19 +183,19 @@
             this.reportedAtBackground.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.reportedAtBackground.Controls.Add(this.reportedAtLabel, 0, 0);
             this.reportedAtBackground.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportedAtBackground.Location = new System.Drawing.Point(184, 37);
+            this.reportedAtBackground.Location = new System.Drawing.Point(184, 38);
             this.reportedAtBackground.Name = "reportedAtBackground";
             this.reportedAtBackground.RowCount = 1;
             this.reportedAtBackground.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.reportedAtBackground.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.reportedAtBackground.Size = new System.Drawing.Size(175, 28);
+            this.reportedAtBackground.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
+            this.reportedAtBackground.Size = new System.Drawing.Size(175, 29);
             this.reportedAtBackground.TabIndex = 4;
             // 
             // reportedAtLabel
             // 
             this.reportedAtLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.reportedAtLabel.AutoSize = true;
-            this.reportedAtLabel.Location = new System.Drawing.Point(70, 7);
+            this.reportedAtLabel.Location = new System.Drawing.Point(70, 8);
             this.reportedAtLabel.Name = "reportedAtLabel";
             this.reportedAtLabel.Size = new System.Drawing.Size(35, 13);
             this.reportedAtLabel.TabIndex = 0;
@@ -217,18 +207,18 @@
             this.incidentTypeBackground.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.incidentTypeBackground.Controls.Add(this.incidentTypeLabel, 0, 0);
             this.incidentTypeBackground.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.incidentTypeBackground.Location = new System.Drawing.Point(3, 71);
+            this.incidentTypeBackground.Location = new System.Drawing.Point(3, 73);
             this.incidentTypeBackground.Name = "incidentTypeBackground";
             this.incidentTypeBackground.RowCount = 1;
             this.incidentTypeBackground.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.incidentTypeBackground.Size = new System.Drawing.Size(175, 31);
+            this.incidentTypeBackground.Size = new System.Drawing.Size(175, 29);
             this.incidentTypeBackground.TabIndex = 5;
             // 
             // incidentTypeLabel
             // 
             this.incidentTypeLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.incidentTypeLabel.AutoSize = true;
-            this.incidentTypeLabel.Location = new System.Drawing.Point(70, 9);
+            this.incidentTypeLabel.Location = new System.Drawing.Point(70, 8);
             this.incidentTypeLabel.Name = "incidentTypeLabel";
             this.incidentTypeLabel.Size = new System.Drawing.Size(35, 13);
             this.incidentTypeLabel.TabIndex = 0;
@@ -240,22 +230,32 @@
             this.statusBackground.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.statusBackground.Controls.Add(this.statusLabel, 0, 0);
             this.statusBackground.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.statusBackground.Location = new System.Drawing.Point(184, 71);
+            this.statusBackground.Location = new System.Drawing.Point(184, 73);
             this.statusBackground.Name = "statusBackground";
             this.statusBackground.RowCount = 1;
             this.statusBackground.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.statusBackground.Size = new System.Drawing.Size(175, 31);
+            this.statusBackground.Size = new System.Drawing.Size(175, 29);
             this.statusBackground.TabIndex = 6;
             // 
             // statusLabel
             // 
             this.statusLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.statusLabel.AutoSize = true;
-            this.statusLabel.Location = new System.Drawing.Point(70, 9);
+            this.statusLabel.Location = new System.Drawing.Point(70, 8);
             this.statusLabel.Name = "statusLabel";
             this.statusLabel.Size = new System.Drawing.Size(35, 13);
             this.statusLabel.TabIndex = 0;
             this.statusLabel.Text = "label1";
+            // 
+            // descriptionBox
+            // 
+            this.descriptionBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.descriptionBox.Location = new System.Drawing.Point(3, 156);
+            this.descriptionBox.Multiline = true;
+            this.descriptionBox.Name = "descriptionBox";
+            this.descriptionBox.ReadOnly = true;
+            this.descriptionBox.Size = new System.Drawing.Size(362, 113);
+            this.descriptionBox.TabIndex = 2;
             // 
             // TicketDetailsComponent
             // 

@@ -14,7 +14,6 @@ namespace View {
     public partial class MainWindow: Form {
         public MainWindow() {
             InitializeComponent();
-            LoadView(new CreateTicketView());
         }
 
         public void LoadView(UserControl userControl) {
@@ -22,6 +21,10 @@ namespace View {
             userControl.Dock = DockStyle.Fill;
 
             mainPanel.Controls.Add(userControl);
+        }
+
+        private void TicketsToolStripMenuItem_Click(object sender, EventArgs e) {
+            LoadView(new TicketManager());
         }
     }
 }
