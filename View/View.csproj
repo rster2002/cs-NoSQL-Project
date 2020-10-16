@@ -58,6 +58,12 @@
     <Compile Include="components\BaseTicketEditorComponent.Designer.cs">
       <DependentUpon>BaseTicketEditorComponent.cs</DependentUpon>
     </Compile>
+    <Compile Include="components\LoginComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="components\LoginComponent.Designer.cs">
+      <DependentUpon>LoginComponent.cs</DependentUpon>
+    </Compile>
     <Compile Include="components\Popup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,8 +93,17 @@
     <Compile Include="views\CreateTicketView.Designer.cs">
       <DependentUpon>CreateTicketView.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\LoginView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\LoginView.Designer.cs">
+      <DependentUpon>LoginView.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="components\BaseTicketEditorComponent.resx">
       <DependentUpon>BaseTicketEditorComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="components\LoginComponent.resx">
+      <DependentUpon>LoginComponent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="components\SelectUserComponent.resx">
       <DependentUpon>SelectUserComponent.cs</DependentUpon>
@@ -110,6 +125,9 @@
     </Compile>
     <EmbeddedResource Include="views\CreateTicketView.resx">
       <DependentUpon>CreateTicketView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\LoginView.resx">
+      <DependentUpon>LoginView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="connections.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

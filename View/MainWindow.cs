@@ -14,7 +14,7 @@ namespace View {
     public partial class MainWindow: Form {
         public MainWindow() {
             InitializeComponent();
-            LoadView(new CreateTicketView());
+            LoadView(new LoginView());
         }
 
         public void LoadView(UserControl userControl) {
