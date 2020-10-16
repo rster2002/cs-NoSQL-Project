@@ -16,7 +16,6 @@ namespace View.components {
         
         private User user = new User();
         private UserService userService = new UserService();
-        
         public LoginComponent() {
             InitializeComponent();
             lblwarning.Hide();   
@@ -26,16 +25,16 @@ namespace View.components {
             UserSession userSession = UserSession.GetInstance();
             var userName = TBUserName.Text;
             string password = TBpassword.Text;
-            string hash = userSession.HashToString(password);
             User user = SearchUser(userName);
             if (user == null) {
                 lblwarning.Text = @"User name is inco.";
                 lblwarning.Show();
-            } else if (userSession.Login(user, hash)) {
+            } else if (userSession.Login(user, TBpassword.Text)) {
                 lblwarning.Text = @"correctpassword.";
                 lblwarning.Show();
             } else {
-                lblwarning.Text = @"Incorrect password.";
+                //lblwarning.Text = @"Incorrect password.";
+                lblwarning.Text = userSession.ReturnString(user, TBpassword.Text);
                 lblwarning.Show();
             }
         }
