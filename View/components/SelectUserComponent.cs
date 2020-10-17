@@ -57,8 +57,7 @@ namespace View.components {
         }
 
         private void UserListViewOnSelectedIndexChanged(object sender, EventArgs e) {
-            ListViewItem item = userListView.SelectedItems[0];
-            if (item == null) return;
+            if (userListView.SelectedItems.Count == 0) return;
 
             confirmButton.Enabled = true;
         }

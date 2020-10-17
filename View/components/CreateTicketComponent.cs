@@ -13,6 +13,7 @@ namespace View.components {
         public CreateTicketComponent() {
             SetConfirmButtonText("Create ticket");
             AllowChangingOfStatus(false);
+            AllowDeletionOfTicket(false);
         }
 
         public event EventHandler<TicketEditEventArgs> OnTicketCreatedEvent;

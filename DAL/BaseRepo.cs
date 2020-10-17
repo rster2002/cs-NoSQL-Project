@@ -47,7 +47,7 @@ namespace DAL {
         }
 
         public void Delete(string id) {
-            collection.DeleteOne(id);
+            collection.DeleteOne(entry => entry.Id == id);
         }
 
         public void Delete(T entity) {

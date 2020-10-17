@@ -72,6 +72,7 @@
             this.tableLayoutPanel1.Controls.Add(this.deleteButton, 1, 9);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.MinimumSize = new System.Drawing.Size(309, 404);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 11;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -218,6 +219,7 @@
             // 
             // descriptionTextBox
             // 
+            this.descriptionTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.descriptionTextBox.Location = new System.Drawing.Point(107, 203);
             this.descriptionTextBox.Multiline = true;
             this.descriptionTextBox.Name = "descriptionTextBox";
@@ -256,6 +258,7 @@
             this.statusComboBox.Name = "statusComboBox";
             this.statusComboBox.Size = new System.Drawing.Size(199, 21);
             this.statusComboBox.TabIndex = 16;
+            this.statusComboBox.SelectedIndexChanged += new System.EventHandler(this.UpdateButtonEnabled);
             // 
             // label8
             // 

@@ -59,49 +59,37 @@ namespace View.components {
             ComboBoxOption typeOfIncidentOption = (ComboBoxOption) typeOfIncidentComboBox.SelectedItem;
             ComboBoxOption priorityOption = (ComboBoxOption) priorityComboBox.SelectedItem;
             ComboBoxOption deadlineOption = (ComboBoxOption) deadlineComboBox.SelectedItem;
+            ComboBoxOption openStatusOption = (ComboBoxOption) statusComboBox.SelectedItem;
 
             if (subject.Length == 0) return false;
             if (description.Length == 0) return false;
             if (typeOfIncidentOption == null) return false;
             if (priorityOption == null) return false;
             if (deadlineOption == null) return false;
+            if (openStatusOption == null) return false;
             if (selectedUser == null) return false;
 
             return true;
         }
 
-        private void SetTypeOfIncidentComboBoxValue(IncidentType incidentType) {
-            foreach (ComboBoxOption option in typeOfIncidentComboBox.Items) { 
-                if ((IncidentType) option.Value == incidentType) {
-                    typeOfIncidentComboBox.SelectedItem = option;
-                }
-            }
-        }
-
-        private void SetPriorityComboBoxValue(Priority priority) {
-            foreach (ComboBoxOption option in priorityComboBox.Items) {
-                if ((Priority) option.Value == priority) {
-                    priorityComboBox.SelectedItem = option;
-                }
-            }
-        }
-
-        private void SetDeadlineComboBoxValue(Deadline deadline) {
-            foreach (ComboBoxOption option in deadlineComboBox.Items) {
-                if ((Deadline) option.Value == deadline) {
-                    deadlineComboBox.SelectedItem = option;
+        private void SetComboBoxByValue<T>(ComboBox comboBox, T value) {
+            foreach (ComboBoxOption option in comboBox.Items) {
+                if (((T) option.Value).Equals(value)) {
+                    comboBox.SelectedItem = option;
                 }
             }
         }
 
         protected void LoadTicket(Ticket ticket) {
+            // Check wheher or not the field is filled and sets the form fields
             if (ticket.Id != null) ticketId = ticket.Id;
             if (ticket.Subject != null) subjectTextBox.Text = ticket.Subject;
             if (ticket.Description != null) descriptionTextBox.Text = ticket.Description;
-
-            SetTypeOfIncidentComboBoxValue(ticket.TypeOfIncident);
-            SetPriorityComboBoxValue(ticket.Priority);
-            SetDeadlineComboBoxValue(ticket.Deadline);
+            
+            SetComboBoxByValue(typeOfIncidentComboBox, ticket.TypeOfIncident);
+            SetComboBoxByValue(priorityComboBox, ticket.Priority);
+            SetComboBoxByValue(deadlineComboBox, ticket.Deadline);
+            SetComboBoxByValue(statusComboBox, ticket.OpenStatus);
 
             dateTimeReportedPicker.Value = ticket.DateReported;
 
@@ -115,16 +103,21 @@ namespace View.components {
             DateTime reportedAt = dateTimeReportedPicker.Value;
             string subject = subjectTextBox.Text;
 
+            // Get the combo box options
             ComboBoxOption typeOfIncidentOption = (ComboBoxOption) typeOfIncidentComboBox.SelectedItem;
             ComboBoxOption priorityOption = (ComboBoxOption) priorityComboBox.SelectedItem;
             ComboBoxOption deadlineOption = (ComboBoxOption) deadlineComboBox.SelectedItem;
+            ComboBoxOption openStatusOption = (ComboBoxOption) statusComboBox.SelectedItem;
 
+            // Get the values from the combo box options
             IncidentType incidentType = (IncidentType) typeOfIncidentOption.Value;
             Priority priority = (Priority) priorityOption.Value;
             Deadline deadline = (Deadline) deadlineOption.Value;
+            OpenState openState = (OpenState) openStatusOption.Value;
 
             string description = descriptionTextBox.Text;
 
+            // Construct the ticket. If ticketId is null, MongoDB will create a new id
             Ticket ticket = new Ticket() {
                 Id = ticketId,
                 DateReported = reportedAt,
@@ -134,8 +127,10 @@ namespace View.components {
                 TypeOfIncident = incidentType,
                 Description = description,
                 ReportedByUser = selectedUser,
+                OpenStatus = openState,
             };
-
+            
+            // Trigger callback
             OnConfirm(ticket);
         }
 
@@ -161,7 +156,7 @@ namespace View.components {
         }
 
         private void DeleteButtonOnClick(object sender, EventArgs e) {
-
+            OnDeleteTicket();
         }
 
         protected void SetConfirmButtonText(string text) {

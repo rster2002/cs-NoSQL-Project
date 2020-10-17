@@ -34,5 +34,9 @@ namespace Service {
         public void DeleteTicket(Ticket ticket) {
             TicketRepo.Delete(ticket);
         }
+
+        public void DeleteTicketById(string id) {
+            TicketRepo.Delete(id);
+        }
     }
 }

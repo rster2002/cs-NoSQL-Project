@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using DAL;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Service {
-    class UserSession {
+    public class UserSession {
         private static UserSession instance;
 
         public User LoggedInUser { private set; get; }

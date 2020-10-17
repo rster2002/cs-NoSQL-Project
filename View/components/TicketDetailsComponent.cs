@@ -8,10 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model;
+using Service;
 
 namespace View.components {
     public partial class TicketDetailsComponent: UserControl {
         private Ticket ticket;
+        private UserSession userSession = UserSession.GetInstance();
+
         private Dictionary<Priority, Color> priorityColorMap = new Dictionary<Priority, Color>() {
             { Priority.Low, Color.FromArgb(255, 105, 245, 175) },
             { Priority.Normal, Color.FromArgb(255, 63, 223, 235) },
@@ -43,7 +46,10 @@ namespace View.components {
 
             InitializeComponent();
             FillControls();
+            CheckShowEditButton();
         }
+
+        public event EventHandler CloseTicketDetailsEvent;
 
         private void FillControls() {
             // Subject
@@ -75,6 +81,34 @@ namespace View.components {
             // Status
             statusBackground.BackColor = ticket.OpenStatus == OpenState.Closed ? Color.Red : Color.Green;
             statusLabel.Text = ticket.OpenStatus.ToString().ToUpper();
+        }
+
+        private void CheckShowEditButton() {
+            editTicketButton.Visible = userSession.LoggedInUser.UserType == UserType.Editor;
+        }
+
+        private void EditButtonOnClick(object sender, EventArgs _) {
+            ChangeTicketComponent changeTicketComponent = new ChangeTicketComponent(ticket);
+            Popup popup = new Popup(changeTicketComponent);
+
+            changeTicketComponent.OnDeleteEvent += (s, e) => {
+                popup.Close();
+
+                if (CloseTicketDetailsEvent != null) {
+                    CloseTicketDetailsEvent.Invoke(this, new EventArgs());
+                }
+            };
+
+            changeTicketComponent.OnTicketChangedEvent += (s, e) => {
+                ticket = e.ticket;
+
+                popup.Close();
+                FillControls();
+            };
+
+            changeTicketComponent.OnCancelEvent += (s, e) => popup.Close();
+
+            popup.ShowDialog();
         }
     }
 }
