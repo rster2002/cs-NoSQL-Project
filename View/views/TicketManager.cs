@@ -19,7 +19,7 @@ namespace View.views {
         private string query = "";
 
         public TicketManager() {
-            TicketListView = new TicketListView(TicketService.GetTickets().ToList());
+            TicketListView = new TicketListView(TicketService.GetTicketsForLoggedInUser().ToList());
 
             // Configure the TicketListView
             TicketListView.Dock = DockStyle.Fill;
@@ -43,7 +43,7 @@ namespace View.views {
         }
 
         private void RefreshTickets() {
-            List<Ticket> tickets = FilterTickets(TicketService.GetTickets().ToList());
+            List<Ticket> tickets = FilterTickets(TicketService.GetTicketsForLoggedInUser().ToList());
             TicketListView.SetTickets(tickets);
         }
 

@@ -21,18 +21,6 @@ namespace TestConsole {
 
         public void Start() {
             TicketRepo ticketRepo = new TicketRepo();
-
-            Form window = new Form();
-            TicketListView ticketListView = new TicketListView(ticketRepo.GetAll().ToList());
-            ticketListView.Dock = DockStyle.Fill;
-
-            ticketListView.OnTicketSelectedEvent += (s, e) => {
-                new Popup(new TicketDetailsComponent(e.selectedTicket))
-                    .ShowDialog();
-            };
-
-            window.Controls.Add(ticketListView);
-            window.ShowDialog();
         }
     }
 }

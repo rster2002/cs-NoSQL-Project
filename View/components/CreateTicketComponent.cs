@@ -12,6 +12,8 @@ namespace View.components {
 
         public CreateTicketComponent() {
             SetConfirmButtonText("Create ticket");
+
+            EnableFormControlsByLoggedInUser();
             AllowChangingOfStatus(false);
             AllowDeletionOfTicket(false);
         }

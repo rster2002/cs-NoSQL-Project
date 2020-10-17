@@ -13,7 +13,9 @@ namespace Service {
 
         public User LoggedInUser { private set; get; }
 
-        private UserSession() { }
+        private UserSession() {
+            LoggedInUser = new UserRepo().GetAll().FirstOrDefault();
+        }
 
         public static UserSession GetInstance() {
             if (instance == null) instance = new UserSession();

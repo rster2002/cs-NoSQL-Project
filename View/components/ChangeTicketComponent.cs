@@ -14,6 +14,7 @@ namespace View.components {
         public ChangeTicketComponent(Ticket ticket) {
             this.ticket = ticket;
 
+            EnableFormControlsByLoggedInUser();
             SetConfirmButtonText("Save changes");
             LoadTicket(ticket);
         }

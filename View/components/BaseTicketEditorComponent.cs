@@ -14,8 +14,8 @@ using System.Runtime.Remoting.Channels;
 
 namespace View.components {
     public abstract partial class BaseTicketEditorComponent: UserControl {
-        private TicketService ticketService = new TicketService();
         private User selectedUser;
+        private UserSession UserSession = UserSession.GetInstance();
         private string ticketId;
 
         public BaseTicketEditorComponent() {
@@ -145,18 +145,45 @@ namespace View.components {
             // Add event handlers
             selectUserComponent.OnCancelEvent += (s, e) => popup.Close();
             selectUserComponent.OnUserSelectedEvent += (s, e) => {
-                selectedUser = e.selectedUser;
+                SetSelectedUser(e.selectedUser);
                 UpdateButtonEnabled(s, e);
 
-                selectUserButton.Text = e.selectedUser.ToString();
                 popup.Close();
             };
 
             popup.ShowDialog();
         }
 
+        private void SetSelectedUser(User user) {
+            selectedUser = user;
+            selectUserButton.Text = user.ToString();
+        }
+
         private void DeleteButtonOnClick(object sender, EventArgs e) {
             OnDeleteTicket();
+        }
+
+        protected void EnableFormControlsByLoggedInUser() {
+            EnableFormControlsByUser(UserSession.LoggedInUser);
+        }
+
+        protected void EnableFormControlsByUser(User user) {
+            UserType userType = user.UserType;
+
+            if (userType == UserType.Normal) {
+                SetSelectedUser(user);
+
+                SetComboBoxByValue(statusComboBox, OpenState.Open);
+                AllowChangingOfStatus(false);
+                AllowDeletionOfTicket(false);
+                AllowChangingDateTimeReported(false);
+                AllowChangingReportedBy(false);
+            } else {
+                AllowChangingOfStatus(true);
+                AllowDeletionOfTicket(true);
+                AllowChangingDateTimeReported(true);
+                AllowChangingReportedBy(true);
+            }
         }
 
         protected void SetConfirmButtonText(string text) {
@@ -169,6 +196,14 @@ namespace View.components {
 
         protected void AllowDeletionOfTicket(bool allowDeletion) {
             deleteButton.Visible = allowDeletion;
+        }
+
+        protected void AllowChangingDateTimeReported(bool allowChange) {
+            dateTimeReportedPicker.Enabled = allowChange;
+        }
+        
+        protected void AllowChangingReportedBy(bool allowChange) {
+            selectUserButton.Enabled = allowChange;
         }
 
         protected abstract void OnCancel();

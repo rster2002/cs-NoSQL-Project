@@ -8,10 +8,21 @@ using Model;
 
 namespace Service {
     public class TicketService {
+        private UserSession UserSession = UserSession.GetInstance();
         private TicketRepo TicketRepo = new TicketRepo();
 
         public IEnumerable<Ticket> GetTickets() {
             return TicketRepo.GetAll();
+        }
+
+        public IEnumerable<Ticket> GetTicketsForLoggedInUser() {
+            UserType loggedInUserType = UserSession.LoggedInUser.UserType;
+
+            if (loggedInUserType == UserType.Editor) {
+                return GetTickets();
+            } else {
+                return GetTicketsByUser(UserSession.LoggedInUser);
+            }
         }
 
         public void AddTicket(Ticket ticket) => TicketRepo.Add(ticket);
