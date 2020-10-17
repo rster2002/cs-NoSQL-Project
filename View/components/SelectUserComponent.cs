@@ -45,16 +45,19 @@ namespace View.components {
             ListViewItem item = userListView.SelectedItems[0];
             User user = (User) item.Tag;
 
-            OnUserSelectedEvent.Invoke(this, new UserSelectedEventArgs(user));
+            if (OnUserSelectedEvent != null) {
+                OnUserSelectedEvent.Invoke(this, new UserSelectedEventArgs(user));
+            }
         }
 
         private void CancelButtonOnClick(object sender, EventArgs e) {
-            OnCancelEvent.Invoke(this, new EventArgs());
+            if (OnCancelEvent != null) {
+                OnCancelEvent.Invoke(this, new EventArgs());
+            }
         }
 
         private void UserListViewOnSelectedIndexChanged(object sender, EventArgs e) {
-            ListViewItem item = userListView.SelectedItems[0];
-            if (item == null) return;
+            if (userListView.SelectedItems.Count == 0) return;
 
             confirmButton.Enabled = true;
         }
