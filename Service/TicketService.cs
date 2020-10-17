@@ -28,6 +28,6 @@ namespace Service {
 
         public long GetTicketCount() => TicketRepo.Count(x => true);
         public long GetUnsolvedTicketCount() => TicketRepo.Count(x => x.OpenStatus != OpenState.Closed);
-        public long GetPastDeadlineTicketCount() => TicketRepo.Count(x => (x.OpenStatus != OpenState.Closed && x.DueDate > DateTime.Now));
+        public long GetPastDeadlineTicketCount() => TicketRepo.Count(x => (x.OpenStatus != OpenState.Closed && x.DueDate < DateTime.Now));
     }
 }

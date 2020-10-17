@@ -49,7 +49,7 @@ namespace Model {
         public bool IsOverdue(DateTime comparasonDatetime) {
             DateTime dueDate = DueDate;
 
-            return comparasonDatetime > dueDate; // Moet dueDate niet groter zijn dan comparisonDate(DateTime.now)??
+            return comparasonDatetime > dueDate;
         }
     }
 }
