@@ -20,10 +20,6 @@ namespace Service {
             return instance;
         }
 
-        //code for password encrypter / decrypter
-        // set permutations
-        private const String strPermutation = "ouiveyxaqtd";
-
         public bool Login(User user, string password) {
             string hash = Encrypt(password, user.Salt);
             if (user.PasswordHash == hash) {
@@ -32,6 +28,7 @@ namespace Service {
             }
             return false;
         }
+
         public string Encrypt(string strData, int salt) {
             return Convert.ToBase64String(Encrypt(Encoding.UTF8.GetBytes(strData), salt));
         }
@@ -40,12 +37,14 @@ namespace Service {
             byte[] salt = BitConverter.GetBytes(inSalt);
             HashAlgorithm algorithm = new SHA256Managed();
             byte[] password = new byte[strData.Length + salt.Length];
+            /*
             for (int i = 0; i < strData.Length; i++) {
                 password[i] = strData[i];
             }
             for (int i = 0; i < salt.Length; i++) {
                 password[strData.Length + i] = salt[i];
             }
+            */
             return algorithm.ComputeHash(password);
         }
     }

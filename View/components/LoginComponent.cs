@@ -33,8 +33,7 @@ namespace View.components {
                 lblwarning.Text = @"correctpassword.";
                 lblwarning.Show();
             } else {
-                //lblwarning.Text = @"Incorrect password.";
-                lblwarning.Text = userSession.ReturnString(user, TBpassword.Text);
+                lblwarning.Text = @"Incorrect password.";
                 lblwarning.Show();
             }
         }
