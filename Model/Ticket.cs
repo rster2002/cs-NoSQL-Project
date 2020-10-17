@@ -32,7 +32,7 @@ namespace Model {
 
                 return dueDate;
             }
-            set { }
+            set { } // Waarom staat hier een set?
         }
 
         public bool ValidateIntegraty() {
@@ -45,11 +45,11 @@ namespace Model {
             return true;
         }
 
+        public bool IsOverdue() => IsOverdue(DateTime.Now);
         public bool IsOverdue(DateTime comparasonDatetime) {
-            if (comparasonDatetime == null) comparasonDatetime = DateTime.Now;
             DateTime dueDate = DueDate;
 
-            return comparasonDatetime > dueDate;
+            return comparasonDatetime > dueDate; // Moet dueDate niet groter zijn dan comparisonDate(DateTime.now)??
         }
     }
 }

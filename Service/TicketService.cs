@@ -25,5 +25,9 @@ namespace Service {
         public IEnumerable<Ticket> GetTicketsByUser(User user) {
             return TicketRepo.GetAll().ToList();
         }
+
+        public long GetTicketCount() => TicketRepo.Count(x => true);
+        public long GetUnsolvedTicketCount() => TicketRepo.Count(x => x.OpenStatus != OpenState.Closed);
+        public long GetPastDeadlineTicketCount() => TicketRepo.Count(x => (x.OpenStatus != OpenState.Closed && x.DueDate > DateTime.Now));
     }
 }
