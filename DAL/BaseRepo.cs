@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
 
 namespace DAL {
@@ -19,12 +20,16 @@ namespace DAL {
             collection = mongoDatabase.GetCollection<T>(collectionName);
         }
 
+        public long Count(Expression<Func<T, bool>> expression) {
+            return collection.CountDocuments(expression);
+        }
+
         public IEnumerable<T> GetAll() {
             return collection.Find(item => true).ToList();
         }
 
-        public IEnumerable<T> Get(FilterDefinition<T> filter) {
-             return collection.Find(filter).ToList();
+        public IEnumerable<T> Get(Expression<Func<T, bool>> expression) {
+             return collection.Find(expression).ToList();
         }
 
         public T Get(string id) {
