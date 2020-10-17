@@ -22,30 +22,27 @@ namespace Service {
 
         public bool Login(User user, string password) {
             string hash = Encrypt(password, user.Salt);
-            if (user.PasswordHash == hash) {
+            if (hash == user.PasswordHash) {
                 LoggedInUser = user;
                 return true;
             }
             return false;
         }
-
+        
         public string Encrypt(string strData, int salt) {
-            return Convert.ToBase64String(Encrypt(Encoding.UTF8.GetBytes(strData), salt));
+            return EncryptHash(strData + salt.ToString());
         }
 
-        private byte[] Encrypt(byte[] strData, int inSalt) {
-            byte[] salt = BitConverter.GetBytes(inSalt);
-            HashAlgorithm algorithm = new SHA256Managed();
-            byte[] password = new byte[strData.Length + salt.Length];
-            /*
-            for (int i = 0; i < strData.Length; i++) {
-                password[i] = strData[i];
+        private string EncryptHash(string strData) {
+            using (SHA256 sha256Hash = SHA256.Create()) {
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(strData));
+
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < bytes.Length; i++) {
+                    builder.Append(bytes[i].ToString("x2"));
+                }
+                return builder.ToString();
             }
-            for (int i = 0; i < salt.Length; i++) {
-                password[strData.Length + i] = salt[i];
-            }
-            */
-            return algorithm.ComputeHash(password);
         }
     }
 }

@@ -27,11 +27,14 @@ namespace View.components {
             string password = TBpassword.Text;
             User user = SearchUser(userName);
             if (user == null) {
-                lblwarning.Text = @"User name is inco.";
+                lblwarning.Text = @"User name is incorrect.";
                 lblwarning.Show();
-            } else if (userSession.Login(user, TBpassword.Text)) {
-                lblwarning.Text = @"correctpassword.";
+            } else if (password == null || password == "") {
+                lblwarning.Text = @"Password is empty.";
                 lblwarning.Show();
+            } else if (userSession.Login(user, password)) {
+                
+                
             } else {
                 lblwarning.Text = @"Incorrect password.";
                 lblwarning.Show();
