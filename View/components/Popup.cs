@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,10 +7,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace View.components {
-    class Popup: Form {
+    public class Popup: Form {
         public Popup(UserControl userControl) {
             userControl.Dock = DockStyle.Fill;
+
             Controls.Add(userControl);
+            if (userControl.MinimumSize.Width > 0 && userControl.MinimumSize.Height > 0) {
+                Size = new System.Drawing.Size(userControl.MinimumSize.Width + 50, userControl.MinimumSize.Height + 50);
+            }
         }
     }
 }

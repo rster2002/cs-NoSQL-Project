@@ -20,18 +20,7 @@ namespace TestConsole {
         }
 
         public void Start() {
-            Form window = new Form();
-            CreateTicketComponent createTicketComponent = new CreateTicketComponent();
-
-            createTicketComponent.OnCancelEvent += (s, e) => window.Close();
-            createTicketComponent.OnTicketCreatedEvent += (s, e) => {
-                Console.WriteLine(e.ticket.Subject);
-                window.Close();
-            };
-
-            createTicketComponent.Dock = DockStyle.Fill;
-            window.Controls.Add(createTicketComponent);
-            window.ShowDialog();
+            TicketRepo ticketRepo = new TicketRepo();
         }
     }
 }
