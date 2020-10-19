@@ -33,8 +33,11 @@ namespace View.components {
                 lblwarning.Text = @"Password is empty.";
                 lblwarning.Show();
             } else if (userSession.Login(user, password)) {
+                // dashboard 
                 
                 
+                lblwarning.Text = @"Correct password.";
+                lblwarning.Show();
             } else {
                 lblwarning.Text = @"Incorrect password.";
                 lblwarning.Show();
