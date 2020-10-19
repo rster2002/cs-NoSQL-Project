@@ -1,4 +1,5 @@
 ﻿using Model;
+using Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,8 +11,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using View.views;
 
+
 namespace View {
     public partial class MainWindow: Form {
+        private UserSession userSession = UserSession.GetInstance();
         public MainWindow() {
             InitializeComponent();
             LoadView(new LoginView(this));
@@ -27,6 +30,9 @@ namespace View {
         }
 
         public void ShowMenuControls(bool show = false) {
+            if (userSession.LoggedInUser.UserType == UserType.Normal) {
+                usersToolStripMenuItem.Visible = false;
+            }
             mainMenuStrip.Visible = show;
         }
 
