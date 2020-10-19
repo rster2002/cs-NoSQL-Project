@@ -11,5 +11,8 @@ namespace Service {
         private UserRepo UserRepo = new UserRepo();
 
         public IEnumerable<User> GetUsers() => UserRepo.GetAll();
+
+        public void AddUser(User user) => UserRepo.Add(user);
+        
     }
 }

@@ -25,6 +25,8 @@
         private void InitializeComponent() {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.centerPanel = new System.Windows.Forms.Panel();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.lstUsers = new System.Windows.Forms.ListView();
             this.clId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clEmail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -32,7 +34,6 @@
             this.clLastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clTickets = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnAddUser = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.centerPanel.SuspendLayout();
@@ -57,14 +58,33 @@
             // 
             this.centerPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.centerPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.centerPanel.Controls.Add(this.txtSearch);
+            this.centerPanel.Controls.Add(this.label2);
             this.centerPanel.Controls.Add(this.lstUsers);
             this.centerPanel.Controls.Add(this.btnAddUser);
-            this.centerPanel.Controls.Add(this.txtSearch);
             this.centerPanel.Controls.Add(this.label1);
             this.centerPanel.Location = new System.Drawing.Point(201, 73);
             this.centerPanel.Name = "centerPanel";
             this.centerPanel.Size = new System.Drawing.Size(492, 560);
             this.centerPanel.TabIndex = 0;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(15, 116);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(135, 20);
+            this.txtSearch.TabIndex = 0;
+            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(11, 81);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(105, 20);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Filter by email";
             // 
             // lstUsers
             // 
@@ -91,7 +111,7 @@
             // clEmail
             // 
             this.clEmail.Text = "Email";
-            this.clEmail.Width = 195;
+            this.clEmail.Width = 122;
             // 
             // clFirstName
             // 
@@ -101,7 +121,7 @@
             // clLastName
             // 
             this.clLastName.Text = "Lastname";
-            this.clLastName.Width = 131;
+            this.clLastName.Width = 126;
             // 
             // clTickets
             // 
@@ -120,19 +140,7 @@
             this.btnAddUser.TabIndex = 2;
             this.btnAddUser.Text = "+ ADD NEW USER";
             this.btnAddUser.UseVisualStyleBackColor = false;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txtSearch.Location = new System.Drawing.Point(15, 79);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSearch.Multiline = true;
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(184, 29);
-            this.txtSearch.TabIndex = 1;
-            this.txtSearch.Text = "Filter by email";
+            this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
             // 
             // label1
             // 
@@ -166,12 +174,13 @@
         private System.Windows.Forms.Panel centerPanel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAddUser;
-        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.ListView lstUsers;
         private System.Windows.Forms.ColumnHeader clId;
         private System.Windows.Forms.ColumnHeader clEmail;
         private System.Windows.Forms.ColumnHeader clFirstName;
         private System.Windows.Forms.ColumnHeader clLastName;
         private System.Windows.Forms.ColumnHeader clTickets;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtSearch;
     }
 }

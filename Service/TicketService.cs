@@ -23,7 +23,8 @@ namespace Service {
 
         public void UpdateTicket(Ticket ticket) => TicketRepo.Update(ticket);
         public IEnumerable<Ticket> GetTicketsByUser(User user) {
-            return TicketRepo.GetAll().ToList();
+            return TicketRepo.GetAll()
+                .Where(ticket => ticket.ReportedByUser.Id == user.Id);
         }
     }
 }
