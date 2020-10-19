@@ -21,6 +21,8 @@ namespace View.components {
             lblwarning.Hide();   
         }
 
+        public event EventHandler OnLogin;
+
         private void BtnLogin_Click(object sender, EventArgs e) {
             UserSession userSession = UserSession.GetInstance();
             var userName = TBUserName.Text;
@@ -34,8 +36,8 @@ namespace View.components {
                 lblwarning.Show();
             } else if (userSession.Login(user, password)) {
                 // dashboard 
-                
-                
+                if (OnLogin != null) OnLogin.Invoke(this, new EventArgs());
+
                 lblwarning.Text = @"Correct password.";
                 lblwarning.Show();
             } else {

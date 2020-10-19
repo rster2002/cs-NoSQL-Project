@@ -11,12 +11,23 @@ using View.components;
 
 namespace View.views {
     public partial class LoginView: UserControl {
-        public LoginView() {
+        private MainWindow mainWindow;
+
+        public LoginView(MainWindow mainWindow) {
+            this.mainWindow = mainWindow;
+
             InitializeComponent();
             PopulateView();
         }
         private void PopulateView() {
-            centerPanel.Controls.Add(new LoginComponent());
+            LoginComponent loginComponent = new LoginComponent();
+
+            loginComponent.OnLogin += (s, e) => {
+                mainWindow.ShowMenuControls(true);
+                mainWindow.LoadView(new DashboardComponent());
+            };
+
+            centerPanel.Controls.Add(loginComponent);
         }
     }
 }

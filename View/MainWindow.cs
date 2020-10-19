@@ -14,7 +14,9 @@ namespace View {
     public partial class MainWindow: Form {
         public MainWindow() {
             InitializeComponent();
-            LoadView(new LoginView());
+            LoadView(new LoginView(this));
+
+            mainMenuStrip.Visible = false;
         }
 
         public void LoadView(UserControl userControl) {
@@ -22,6 +24,10 @@ namespace View {
             userControl.Dock = DockStyle.Fill;
 
             mainPanel.Controls.Add(userControl);
+        }
+
+        public void ShowMenuControls(bool show = false) {
+            mainMenuStrip.Visible = show;
         }
 
         private void TicketsToolStripMenuItem_Click(object sender, EventArgs e) {

@@ -13,7 +13,7 @@ namespace View.components {
 
             Controls.Add(userControl);
             if (userControl.MinimumSize.Width > 0 && userControl.MinimumSize.Height > 0) {
-                Size = userControl.MinimumSize;
+                Size = new System.Drawing.Size(userControl.MinimumSize.Width + 50, userControl.MinimumSize.Height + 50);
             }
         }
     }
