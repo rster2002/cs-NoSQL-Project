@@ -19,6 +19,12 @@ namespace View.components {
             { Priority.High, Color.FromArgb(255, 255, 101, 84) },
         };
 
+        private Dictionary<OpenState, Color> openStateColorMap = new Dictionary<OpenState, Color>() {
+            { OpenState.Open, Color.FromArgb(255, 105, 245, 175) },
+            { OpenState.Closed, Color.FromArgb(255, 255, 101, 84) },
+            { OpenState.Escalated, Color.FromArgb(255, 175, 105, 245) },
+        };
+
         public TicketListView(List<Ticket> tickets) {
             this.tickets = tickets;
 
@@ -49,11 +55,10 @@ namespace View.components {
             listViewItem.SubItems.Add(ticket.ReportedByUser.ToString());
 
             ListViewItem.ListViewSubItem reportedAtSubItem = listViewItem.SubItems.Add(ticket.DateReported.ToString());
-            reportedAtSubItem.BackColor = ticket.IsOverdue(DateTime.Now) ? Color.Red : Color.Green;
+            reportedAtSubItem.BackColor = ticket.IsOverdue(DateTime.Now) ? Color.FromArgb(255, 255, 101, 84) : Color.FromArgb(255, 105, 245, 175);
 
             ListViewItem.ListViewSubItem statusSubItem = listViewItem.SubItems.Add(ticket.OpenStatus.ToString());
-            statusSubItem.BackColor = ticket.OpenStatus == OpenState.Open ? Color.Green : Color.Red;
-
+            statusSubItem.BackColor = openStateColorMap[ticket.OpenStatus];
 
             ListViewItem.ListViewSubItem prioritySubItem = listViewItem.SubItems.Add(ticket.Priority.ToString());
             prioritySubItem.BackColor = priorityColorMap[ticket.Priority];

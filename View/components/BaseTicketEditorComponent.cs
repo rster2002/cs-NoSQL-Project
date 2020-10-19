@@ -45,6 +45,7 @@ namespace View.components {
             // Populate the status Combo Box
             statusComboBox.Items.Add(new ComboBoxOption("Open", OpenState.Open));
             statusComboBox.Items.Add(new ComboBoxOption("Closed", OpenState.Closed));
+            statusComboBox.Items.Add(new ComboBoxOption("Escalated", OpenState.Escalated));
             statusComboBox.SelectedIndex = 0;
         }
 
