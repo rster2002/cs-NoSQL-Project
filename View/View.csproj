@@ -61,6 +61,12 @@
     <Compile Include="components\BaseTicketEditorComponent.Designer.cs">
       <DependentUpon>BaseTicketEditorComponent.cs</DependentUpon>
     </Compile>
+    <Compile Include="components\ArchiveComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="components\ArchiveComponent.Designer.cs">
+      <DependentUpon>ArchiveComponent.cs</DependentUpon>
+    </Compile>
     <Compile Include="components\LoginComponent.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -128,6 +134,9 @@
     </Compile>
     <EmbeddedResource Include="components\BaseTicketEditorComponent.resx">
       <DependentUpon>BaseTicketEditorComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="components\ArchiveComponent.resx">
+      <DependentUpon>ArchiveComponent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="components\LoginComponent.resx">
       <DependentUpon>LoginComponent.cs</DependentUpon>
