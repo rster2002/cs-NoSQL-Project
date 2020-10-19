@@ -23,5 +23,9 @@ namespace View {
 
             mainPanel.Controls.Add(userControl);
         }
+
+        private void TicketsToolStripMenuItem_Click(object sender, EventArgs e) {
+            LoadView(new TicketManager());
+        }
     }
 }

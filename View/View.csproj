@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -64,6 +65,12 @@
     <Compile Include="components\LoginComponent.Designer.cs">
       <DependentUpon>LoginComponent.cs</DependentUpon>
     </Compile>
+    <Compile Include="components\DashboardComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="components\DashboardComponent.Designer.cs">
+      <DependentUpon>DashboardComponent.cs</DependentUpon>
+    </Compile>
     <Compile Include="components\Popup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +86,12 @@
     <Compile Include="components\TicketDetailsComponent.Designer.cs">
       <DependentUpon>TicketDetailsComponent.cs</DependentUpon>
     </Compile>
+    <Compile Include="components\TicketListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="components\TicketListView.Designer.cs">
+      <DependentUpon>TicketListView.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,11 +100,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="views\CreateTicketView.cs">
+    <Compile Include="views\TicketManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="views\CreateTicketView.Designer.cs">
-      <DependentUpon>CreateTicketView.cs</DependentUpon>
+    <Compile Include="views\TicketManager.Designer.cs">
+      <DependentUpon>TicketManager.cs</DependentUpon>
     </Compile>
     <Compile Include="views\LoginView.cs">
       <SubType>UserControl</SubType>
@@ -105,11 +118,17 @@
     <EmbeddedResource Include="components\LoginComponent.resx">
       <DependentUpon>LoginComponent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="components\DashboardComponent.resx">
+      <DependentUpon>DashboardComponent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="components\SelectUserComponent.resx">
       <DependentUpon>SelectUserComponent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="components\TicketDetailsComponent.resx">
       <DependentUpon>TicketDetailsComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="components\TicketListView.resx">
+      <DependentUpon>TicketListView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
@@ -123,8 +142,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="views\CreateTicketView.resx">
-      <DependentUpon>CreateTicketView.cs</DependentUpon>
+    <EmbeddedResource Include="views\TicketManager.resx">
+      <DependentUpon>TicketManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\LoginView.resx">
       <DependentUpon>LoginView.cs</DependentUpon>

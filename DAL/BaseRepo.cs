@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
 
 namespace DAL {
@@ -19,12 +20,16 @@ namespace DAL {
             collection = mongoDatabase.GetCollection<T>(collectionName);
         }
 
+        public long Count(Expression<Func<T, bool>> expression) {
+            return collection.CountDocuments(expression);
+        }
+
         public IEnumerable<T> GetAll() {
             return collection.Find(item => true).ToList();
         }
 
-        public IEnumerable<T> Get(FilterDefinition<T> filter) {
-             return collection.Find(filter).ToList();
+        public IEnumerable<T> Get(Expression<Func<T, bool>> expression) {
+             return collection.Find(expression).ToList();
         }
 
         public T Get(string id) {
@@ -36,7 +41,10 @@ namespace DAL {
         }
 
         public void Update(T entity) {
-            collection.ReplaceOne(item => item.Id == entity.Id, entity);
+            if (entity.Id == null) throw new Exception("IEntity.Id cannot be null");
+
+            FilterDefinition<T> filterDefinition = Builders<T>.Filter.Eq(item => item.Id, entity.Id); ;
+            collection.ReplaceOne(filterDefinition, entity);
         }
 
         public void AddMultiple(T[] entities) {
@@ -44,7 +52,7 @@ namespace DAL {
         }
 
         public void Delete(string id) {
-            collection.DeleteOne(id);
+            collection.DeleteOne(entry => entry.Id == id);
         }
 
         public void Delete(T entity) {

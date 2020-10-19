@@ -1,4 +1,4 @@
-﻿namespace View.components {
+namespace View.components {
     partial class SelectUserComponent {
         /// <summary> 
         /// Required designer variable.
@@ -54,7 +54,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(519, 609);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(515, 613);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -71,15 +71,15 @@
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 52F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(511, 52);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(510, 52);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 200);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 200, 4, 0);
+            this.label1.Location = new System.Drawing.Point(4, 16);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 20);
             this.label1.TabIndex = 0;
@@ -88,7 +88,7 @@
             // userSearchTextBox
             // 
             this.userSearchTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.userSearchTextBox.Location = new System.Drawing.Point(259, 97);
+            this.userSearchTextBox.Location = new System.Drawing.Point(259, 13);
             this.userSearchTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.userSearchTextBox.Name = "userSearchTextBox";
             this.userSearchTextBox.Size = new System.Drawing.Size(244, 26);
@@ -108,7 +108,7 @@
             this.userListView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.userListView.MultiSelect = false;
             this.userListView.Name = "userListView";
-            this.userListView.Size = new System.Drawing.Size(511, 464);
+            this.userListView.Size = new System.Drawing.Size(510, 464);
             this.userListView.TabIndex = 1;
             this.userListView.UseCompatibleStateImageBehavior = false;
             this.userListView.View = System.Windows.Forms.View.Details;
@@ -127,7 +127,7 @@
             // columnHeader3
             // 
             this.columnHeader3.Text = "Email address";
-            this.columnHeader3.Width = 106;
+            this.columnHeader3.Width = 223;
             // 
             // tableLayoutPanel3
             // 
@@ -143,7 +143,7 @@
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(511, 63);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(510, 67);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
             // confirmButton
@@ -153,7 +153,7 @@
             this.confirmButton.Location = new System.Drawing.Point(259, 5);
             this.confirmButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.confirmButton.Name = "confirmButton";
-            this.confirmButton.Size = new System.Drawing.Size(248, 53);
+            this.confirmButton.Size = new System.Drawing.Size(247, 57);
             this.confirmButton.TabIndex = 0;
             this.confirmButton.Text = "Confirm";
             this.confirmButton.UseVisualStyleBackColor = true;
@@ -165,7 +165,7 @@
             this.cancelButton.Location = new System.Drawing.Point(4, 5);
             this.cancelButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(247, 53);
+            this.cancelButton.Size = new System.Drawing.Size(247, 57);
             this.cancelButton.TabIndex = 1;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
@@ -176,9 +176,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(0);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MinimumSize = new System.Drawing.Size(515, 613);
             this.Name = "SelectUserComponent";
-            this.Size = new System.Drawing.Size(519, 609);
+            this.Size = new System.Drawing.Size(515, 613);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
