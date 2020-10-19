@@ -12,6 +12,7 @@ using Model;
 namespace View.components {
     public partial class TicketListView: UserControl {
         private List<Ticket> tickets;
+        private ListViewColumnSorter lvwColumnSorter;
 
         private Dictionary<Priority, Color> priorityColorMap = new Dictionary<Priority, Color>() {
             { Priority.Low, Color.FromArgb(255, 105, 245, 175) },
@@ -30,6 +31,8 @@ namespace View.components {
 
             InitializeComponent();
             RefreshList();
+            lvwColumnSorter = new ListViewColumnSorter();
+            this.ticketsListView.ListViewItemSorter = lvwColumnSorter;
         }
 
         public event EventHandler<TicketSelectedEventArgs> OnTicketSelectedEvent;
@@ -75,6 +78,20 @@ namespace View.components {
                     OnTicketSelectedEvent.Invoke(this, new TicketSelectedEventArgs(ticket));
                 }
             }
+        }
+
+        private void TicketsListView_SelectedIndexChanged(object sender, ColumnClickEventArgs e) {
+            if (e.Column == lvwColumnSorter.SortColumn) {
+                if (lvwColumnSorter.Order == SortOrder.Ascending) {
+                    lvwColumnSorter.Order = SortOrder.Descending;
+                } else {
+                    lvwColumnSorter.Order = SortOrder.Ascending;
+                }
+            } else {
+                lvwColumnSorter.SortColumn = e.Column;
+                lvwColumnSorter.Order = SortOrder.Ascending;
+            }
+            this.ticketsListView.Sort();
         }
     }
 }

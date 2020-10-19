@@ -43,12 +43,14 @@
             this.ticketsListView.FullRowSelect = true;
             this.ticketsListView.HideSelection = false;
             this.ticketsListView.Location = new System.Drawing.Point(0, 0);
+            this.ticketsListView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ticketsListView.MultiSelect = false;
             this.ticketsListView.Name = "ticketsListView";
-            this.ticketsListView.Size = new System.Drawing.Size(768, 451);
+            this.ticketsListView.Size = new System.Drawing.Size(1152, 694);
             this.ticketsListView.TabIndex = 0;
             this.ticketsListView.UseCompatibleStateImageBehavior = false;
             this.ticketsListView.View = System.Windows.Forms.View.Details;
+            this.ticketsListView.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.TicketsListView_SelectedIndexChanged);
             this.ticketsListView.DoubleClick += new System.EventHandler(this.TicketsListViewOnDoubleClick);
             // 
             // columnHeader1
@@ -78,11 +80,12 @@
             // 
             // TicketListView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.ticketsListView);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "TicketListView";
-            this.Size = new System.Drawing.Size(768, 451);
+            this.Size = new System.Drawing.Size(1152, 694);
             this.ResumeLayout(false);
 
         }
