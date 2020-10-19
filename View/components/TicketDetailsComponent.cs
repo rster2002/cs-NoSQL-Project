@@ -41,6 +41,12 @@ namespace View.components {
             { IncidentType.Service, Color.FromArgb(255, 68, 235, 124) },
         };
 
+        private Dictionary<OpenState, Color> openStateColorMap = new Dictionary<OpenState, Color>() {
+            { OpenState.Open, Color.FromArgb(255, 105, 245, 175) },
+            { OpenState.Closed, Color.FromArgb(255, 255, 101, 84) },
+            { OpenState.Escalated, Color.FromArgb(255, 175, 105, 245) },
+        };
+
         public TicketDetailsComponent(Ticket ticket) {
             this.ticket = ticket;
 
@@ -68,7 +74,7 @@ namespace View.components {
             reportedByLabel.Text = "Reported by: " + ticket.ReportedByUser.ToString();
 
             // Date reported
-            reportedAtBackground.BackColor = ticket.IsOverdue(DateTime.Now) ? Color.Red : Color.Green;
+            reportedAtBackground.BackColor = ticket.IsOverdue(DateTime.Now) ? Color.FromArgb(255, 255, 101, 84) : Color.FromArgb(255, 105, 245, 175);
             reportedAtLabel.Text = "Date reported: " + ticket.DateReported.ToString("HH:mm dd/MM/yyyy");
 
             // Description
@@ -79,7 +85,7 @@ namespace View.components {
             incidentTypeLabel.Text = ticket.TypeOfIncident.ToString();
 
             // Status
-            statusBackground.BackColor = ticket.OpenStatus == OpenState.Closed ? Color.Red : Color.Green;
+            statusBackground.BackColor = openStateColorMap[ticket.OpenStatus];
             statusLabel.Text = ticket.OpenStatus.ToString().ToUpper();
         }
 
