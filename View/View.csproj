@@ -159,9 +159,6 @@
     <EmbeddedResource Include="views\AddUserForm.resx">
       <DependentUpon>AddUserForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\CreateTicketView.resx">
-      <DependentUpon>CreateTicketView.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="views\TicketManager.resx">
       <DependentUpon>TicketManager.cs</DependentUpon>
     </EmbeddedResource>

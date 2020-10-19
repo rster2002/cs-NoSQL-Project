@@ -33,5 +33,9 @@ namespace View {
         private void TicketsToolStripMenuItem_Click(object sender, EventArgs e) {
             LoadView(new TicketManager());
         }
+
+        private void UsersToolStipMenuItemOnClick(object sender, EventArgs e) {
+            LoadView(new UserManagement());
+        }
     }
 }
