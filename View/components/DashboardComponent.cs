@@ -37,5 +37,9 @@ namespace View.components {
 
             lbl_info.Text = $"Total tickets: {totalTickets}\nTotal Unsolved tickets: {unsolvedTickets}\nTotal overdue tickets: {overdueTickets}";
         }
+
+        private void DashboardComponent_Load(object sender, EventArgs e) {
+
+        }
     }
 }

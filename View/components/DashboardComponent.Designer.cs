@@ -23,10 +23,10 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.lbl_info = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -36,30 +36,30 @@
             // 
             this.chart1.BackColor = System.Drawing.SystemColors.Control;
             this.chart1.BorderlineColor = System.Drawing.SystemColors.Control;
-            chartArea2.AxisY.MajorGrid.Enabled = false;
-            chartArea2.BackColor = System.Drawing.SystemColors.Control;
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.BackColor = System.Drawing.SystemColors.Control;
-            legend2.Name = "Legend1";
-            legend2.Position.Auto = false;
-            legend2.Position.Height = 8.026756F;
-            legend2.Position.Width = 100F;
-            this.chart1.Legends.Add(legend2);
+            chartArea1.AxisY.MajorGrid.Enabled = false;
+            chartArea1.BackColor = System.Drawing.SystemColors.Control;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.BackColor = System.Drawing.SystemColors.Control;
+            legend1.Name = "Legend1";
+            legend1.Position.Auto = false;
+            legend1.Position.Height = 8.026756F;
+            legend1.Position.Width = 100F;
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(3, 3);
             this.chart1.Name = "chart1";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedBar;
-            series3.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            series3.Legend = "Legend1";
-            series3.Name = "Unsolved Indicents";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series4.Color = System.Drawing.Color.Red;
-            series4.Legend = "Legend1";
-            series4.Name = "Incidents past deadline";
-            this.chart1.Series.Add(series3);
-            this.chart1.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedBar;
+            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            series1.Legend = "Legend1";
+            series1.Name = "Unsolved Indicents";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series2.Color = System.Drawing.Color.Red;
+            series2.Legend = "Legend1";
+            series2.Name = "Incidents past deadline";
+            this.chart1.Series.Add(series1);
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(397, 217);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -70,7 +70,7 @@
             this.lbl_info.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_info.Location = new System.Drawing.Point(11, 223);
             this.lbl_info.Name = "lbl_info";
-            this.lbl_info.Size = new System.Drawing.Size(69, 18);
+            this.lbl_info.Size = new System.Drawing.Size(114, 29);
             this.lbl_info.TabIndex = 3;
             this.lbl_info.Text = "<ToAdd>";
             // 
@@ -80,6 +80,7 @@
             this.Controls.Add(this.chart1);
             this.Name = "DashboardComponent";
             this.Size = new System.Drawing.Size(403, 341);
+            this.Load += new System.EventHandler(this.DashboardComponent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

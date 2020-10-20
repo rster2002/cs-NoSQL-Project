@@ -61,6 +61,7 @@
     <Compile Include="components\BaseTicketEditorComponent.Designer.cs">
       <DependentUpon>BaseTicketEditorComponent.cs</DependentUpon>
     </Compile>
+    <Compile Include="components\ListViewColumnSorter.cs" />
     <Compile Include="components\LoginComponent.cs">
       <SubType>UserControl</SubType>
     </Compile>
