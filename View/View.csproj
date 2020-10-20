@@ -67,6 +67,7 @@
     <Compile Include="components\ArchiveComponent.Designer.cs">
       <DependentUpon>ArchiveComponent.cs</DependentUpon>
     </Compile>
+    <Compile Include="components\ListViewColumnSorter.cs" />
     <Compile Include="components\LoginComponent.cs">
       <SubType>UserControl</SubType>
     </Compile>
