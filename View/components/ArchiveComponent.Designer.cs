@@ -29,12 +29,12 @@
             this.cb_endDate = new System.Windows.Forms.CheckBox();
             this.btn_getTicketCount = new System.Windows.Forms.Button();
             this.pnl_afterTicketCount = new System.Windows.Forms.Panel();
+            this.lbl_status = new System.Windows.Forms.Label();
+            this.btn_archiveAndDelete = new System.Windows.Forms.Button();
+            this.btn_archive = new System.Windows.Forms.Button();
             this.btn_setPath = new System.Windows.Forms.Button();
             this.lbl_ticketCount = new System.Windows.Forms.Label();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.btn_archive = new System.Windows.Forms.Button();
-            this.btn_archiveAndDelete = new System.Windows.Forms.Button();
-            this.lbl_status = new System.Windows.Forms.Label();
             this.pnl_afterTicketCount.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,14 +91,44 @@
             // pnl_afterTicketCount
             // 
             this.pnl_afterTicketCount.Controls.Add(this.lbl_status);
-            this.pnl_afterTicketCount.Controls.Add(this.btn_archiveAndDelete);
-            this.pnl_afterTicketCount.Controls.Add(this.btn_archive);
             this.pnl_afterTicketCount.Controls.Add(this.btn_setPath);
-            this.pnl_afterTicketCount.Location = new System.Drawing.Point(3, 136);
+            this.pnl_afterTicketCount.Location = new System.Drawing.Point(3, 237);
             this.pnl_afterTicketCount.Name = "pnl_afterTicketCount";
-            this.pnl_afterTicketCount.Size = new System.Drawing.Size(397, 202);
+            this.pnl_afterTicketCount.Size = new System.Drawing.Size(397, 101);
             this.pnl_afterTicketCount.TabIndex = 8;
             this.pnl_afterTicketCount.Visible = false;
+            // 
+            // lbl_status
+            // 
+            this.lbl_status.AutoSize = true;
+            this.lbl_status.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_status.Location = new System.Drawing.Point(4, 57);
+            this.lbl_status.Name = "lbl_status";
+            this.lbl_status.Size = new System.Drawing.Size(0, 16);
+            this.lbl_status.TabIndex = 4;
+            // 
+            // btn_archiveAndDelete
+            // 
+            this.btn_archiveAndDelete.Enabled = false;
+            this.btn_archiveAndDelete.ForeColor = System.Drawing.Color.Red;
+            this.btn_archiveAndDelete.Location = new System.Drawing.Point(207, 132);
+            this.btn_archiveAndDelete.Name = "btn_archiveAndDelete";
+            this.btn_archiveAndDelete.Size = new System.Drawing.Size(193, 23);
+            this.btn_archiveAndDelete.TabIndex = 3;
+            this.btn_archiveAndDelete.Text = "Archive and Delete";
+            this.btn_archiveAndDelete.UseVisualStyleBackColor = true;
+            this.btn_archiveAndDelete.Click += new System.EventHandler(this.btn_archiveAndDelete_Click);
+            // 
+            // btn_archive
+            // 
+            this.btn_archive.Enabled = false;
+            this.btn_archive.Location = new System.Drawing.Point(3, 132);
+            this.btn_archive.Name = "btn_archive";
+            this.btn_archive.Size = new System.Drawing.Size(198, 23);
+            this.btn_archive.TabIndex = 2;
+            this.btn_archive.Text = "Archive";
+            this.btn_archive.UseVisualStyleBackColor = true;
+            this.btn_archive.Click += new System.EventHandler(this.btn_archive_Click);
             // 
             // btn_setPath
             // 
@@ -109,7 +139,6 @@
             this.btn_setPath.TabIndex = 1;
             this.btn_setPath.Text = "Set Path";
             this.btn_setPath.UseVisualStyleBackColor = true;
-            this.btn_setPath.Click += new System.EventHandler(this.btn_setPath_Click);
             // 
             // lbl_ticketCount
             // 
@@ -126,41 +155,11 @@
             this.saveFileDialog1.DefaultExt = "csv";
             this.saveFileDialog1.Filter = "CSV Document|*.csv";
             // 
-            // btn_archive
-            // 
-            this.btn_archive.Enabled = false;
-            this.btn_archive.Location = new System.Drawing.Point(7, 31);
-            this.btn_archive.Name = "btn_archive";
-            this.btn_archive.Size = new System.Drawing.Size(191, 23);
-            this.btn_archive.TabIndex = 2;
-            this.btn_archive.Text = "Archive";
-            this.btn_archive.UseVisualStyleBackColor = true;
-            this.btn_archive.Click += new System.EventHandler(this.btn_archive_Click);
-            // 
-            // btn_archiveAndDelete
-            // 
-            this.btn_archiveAndDelete.Enabled = false;
-            this.btn_archiveAndDelete.ForeColor = System.Drawing.Color.Red;
-            this.btn_archiveAndDelete.Location = new System.Drawing.Point(204, 31);
-            this.btn_archiveAndDelete.Name = "btn_archiveAndDelete";
-            this.btn_archiveAndDelete.Size = new System.Drawing.Size(190, 23);
-            this.btn_archiveAndDelete.TabIndex = 3;
-            this.btn_archiveAndDelete.Text = "Archive and Delete";
-            this.btn_archiveAndDelete.UseVisualStyleBackColor = true;
-            this.btn_archiveAndDelete.Click += new System.EventHandler(this.btn_archiveAndDelete_Click);
-            // 
-            // lbl_status
-            // 
-            this.lbl_status.AutoSize = true;
-            this.lbl_status.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_status.Location = new System.Drawing.Point(4, 57);
-            this.lbl_status.Name = "lbl_status";
-            this.lbl_status.Size = new System.Drawing.Size(0, 16);
-            this.lbl_status.TabIndex = 4;
-            // 
             // ArchiveComponent
             // 
             this.Controls.Add(this.pnl_afterTicketCount);
+            this.Controls.Add(this.btn_archive);
+            this.Controls.Add(this.btn_archiveAndDelete);
             this.Controls.Add(this.lbl_ticketCount);
             this.Controls.Add(this.btn_getTicketCount);
             this.Controls.Add(this.cb_endDate);

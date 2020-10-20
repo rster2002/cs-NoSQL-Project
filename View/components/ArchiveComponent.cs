@@ -15,17 +15,12 @@ namespace View.components {
         private ArchiveService archiveService = new ArchiveService();
         public ArchiveComponent() {
             InitializeComponent();
-            FillArchiveScreen();
         }
 
         public ArchiveComponent(IContainer container) {
             container.Add(this);
 
             InitializeComponent();
-        }
-
-        private void FillArchiveScreen() {
-            saveFileDialog1.FileOk += OnFileOk;
         }
 
         private void cb_beginDate_CheckedChanged(object sender, EventArgs e) {
@@ -36,40 +31,51 @@ namespace View.components {
             dtp_endDate.Enabled = cb_endDate.Checked;
         }
 
-        private void btn_setPath_Click(object sender, EventArgs e) {
-            btn_archive.Enabled = false;
-            btn_archiveAndDelete.Enabled = false;
-            saveFileDialog1.ShowDialog();
-        }
-
-        private void OnFileOk(object sender, EventArgs e) {
-            btn_archive.Enabled = true;
-            btn_archiveAndDelete.Enabled = true;
-        }
+        private long ticketCount;
 
         private void btn_getTicketCount_Click(object sender, EventArgs e) {
-            long res = archiveService.GetTicketCount();
-            lbl_ticketCount.Text = $"Ticket Count: {res}";
-            if (res > 0) {
-                pnl_afterTicketCount.Show();
+            archiveService.BeginDate = dtp_beginDate.Value;
+            archiveService.EndDate = dtp_endDate.Value;
 
-                archiveService.BeginDate = dtp_beginDate.Value;
-                archiveService.EndDate = dtp_endDate.Value;
+            archiveService.UseBeginDate = cb_beginDate.Checked;
+            archiveService.UseEndDate = cb_endDate.Checked;
 
-                archiveService.UseBeginDate = cb_beginDate.Checked;
-                archiveService.UseEndDate = cb_endDate.Checked;
+            ticketCount = archiveService.GetTicketCount();
+            lbl_ticketCount.Text = $"Ticket Count: {ticketCount}";
+
+            if (ticketCount > 0) {
+                btn_archive.Enabled = true;
+                btn_archiveAndDelete.Enabled = true;
             } 
-            else
-                pnl_afterTicketCount.Hide();
+            else {
+                btn_archive.Enabled = false;
+                btn_archiveAndDelete.Enabled = false;
+            }
         }
 
         private void btn_archive_Click(object sender, EventArgs e) {
-            archiveService.Archive(saveFileDialog1.FileName);
-            lbl_status.Text = "Archive successful";
+            saveFileDialog1.FileOk += OnFileOkArchive;
+            saveFileDialog1.ShowDialog();
         }
 
         private void btn_archiveAndDelete_Click(object sender, EventArgs e) {
-            throw new Exception("Not implemented yet, for safety");
+            //throw new Exception("Not implemented yet, for safety");
+            if (MessageBox.Show($"Are you certain you want to archive and delete {ticketCount} tickets?", "Warning!", MessageBoxButtons.YesNo) == DialogResult.Yes) {
+                saveFileDialog1.FileOk += OnFileOkArchiveDelete;
+                saveFileDialog1.ShowDialog();
+            }
+        }
+
+        private void OnFileOkArchive(object sender, EventArgs e) {
+            archiveService.Archive(saveFileDialog1.FileName);
+            saveFileDialog1.FileOk -= OnFileOkArchive;
+            MessageBox.Show("Archive successful");
+        }
+
+        private void OnFileOkArchiveDelete(object sender, EventArgs e) {
+            archiveService.ArchiveAndDelete(saveFileDialog1.FileName);
+            saveFileDialog1.FileOk -= OnFileOkArchiveDelete;
+            MessageBox.Show("Archive successful");
         }
     }
 }

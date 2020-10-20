@@ -60,12 +60,11 @@ namespace Service {
         }
 
         public void ArchiveAndDelete(string path) {
-            List<Ticket> tickets = GetTickets();
-            if (tickets.Count <= 0)
-                return;
+            Archive(path);
 
-            WriteCSV(path, tickets);
-            ticketRepo.DeleteMultiple(tickets.ToArray());
+            ticketRepo.DeleteMultiple(x =>
+            (!UseBeginDate || x.DateReported > BeginDate) &&
+            (!UseEndDate || x.DateReported < EndDate));
         }
     }
 }
