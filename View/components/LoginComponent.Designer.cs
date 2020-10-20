@@ -49,6 +49,7 @@
             this.loginComponentTLP.Controls.Add(this.lblwarning, 1, 5);
             this.loginComponentTLP.Dock = System.Windows.Forms.DockStyle.Fill;
             this.loginComponentTLP.Location = new System.Drawing.Point(0, 0);
+            this.loginComponentTLP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.loginComponentTLP.Name = "loginComponentTLP";
             this.loginComponentTLP.RowCount = 7;
             this.loginComponentTLP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
@@ -58,7 +59,7 @@
             this.loginComponentTLP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.loginComponentTLP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.loginComponentTLP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.loginComponentTLP.Size = new System.Drawing.Size(519, 609);
+            this.loginComponentTLP.Size = new System.Drawing.Size(346, 396);
             this.loginComponentTLP.TabIndex = 0;
             // 
             // LogLBLTitle
@@ -67,9 +68,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LogLBLTitle.AutoSize = true;
-            this.LogLBLTitle.Location = new System.Drawing.Point(158, 0);
+            this.LogLBLTitle.Location = new System.Drawing.Point(105, 0);
+            this.LogLBLTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LogLBLTitle.Name = "LogLBLTitle";
-            this.LogLBLTitle.Size = new System.Drawing.Size(201, 91);
+            this.LogLBLTitle.Size = new System.Drawing.Size(134, 59);
             this.LogLBLTitle.TabIndex = 1;
             this.LogLBLTitle.Text = "The Garden Group";
             this.LogLBLTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -78,19 +80,20 @@
             // 
             this.TBUserName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TBUserName.Location = new System.Drawing.Point(158, 181);
-            this.TBUserName.Margin = new System.Windows.Forms.Padding(3, 30, 3, 30);
+            this.TBUserName.Location = new System.Drawing.Point(105, 117);
+            this.TBUserName.Margin = new System.Windows.Forms.Padding(2, 19, 2, 19);
             this.TBUserName.Name = "TBUserName";
-            this.TBUserName.Size = new System.Drawing.Size(201, 26);
+            this.TBUserName.Size = new System.Drawing.Size(134, 20);
             this.TBUserName.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(158, 131);
+            this.label1.Location = new System.Drawing.Point(105, 85);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 20);
+            this.label1.Size = new System.Drawing.Size(87, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Gebruikersnaam:";
             // 
@@ -98,10 +101,10 @@
             // 
             this.TBpassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TBpassword.Location = new System.Drawing.Point(158, 332);
-            this.TBpassword.Margin = new System.Windows.Forms.Padding(3, 30, 3, 30);
+            this.TBpassword.Location = new System.Drawing.Point(105, 215);
+            this.TBpassword.Margin = new System.Windows.Forms.Padding(2, 19, 2, 19);
             this.TBpassword.Name = "TBpassword";
-            this.TBpassword.Size = new System.Drawing.Size(201, 26);
+            this.TBpassword.Size = new System.Drawing.Size(134, 20);
             this.TBpassword.TabIndex = 2;
             this.TBpassword.UseSystemPasswordChar = true;
             // 
@@ -109,20 +112,22 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(158, 282);
+            this.label2.Location = new System.Drawing.Point(105, 183);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(176, 20);
+            this.label2.Size = new System.Drawing.Size(71, 13);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Gebruikerswachtwoord:";
+            this.label2.Text = "Wachtwoord:";
             // 
             // BtnLogin
             // 
             this.BtnLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnLogin.Location = new System.Drawing.Point(158, 456);
+            this.BtnLogin.Location = new System.Drawing.Point(105, 296);
+            this.BtnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BtnLogin.Name = "BtnLogin";
-            this.BtnLogin.Size = new System.Drawing.Size(201, 150);
+            this.BtnLogin.Size = new System.Drawing.Size(134, 98);
             this.BtnLogin.TabIndex = 5;
             this.BtnLogin.Text = "Login";
             this.BtnLogin.UseVisualStyleBackColor = true;
@@ -133,19 +138,21 @@
             this.lblwarning.AutoSize = true;
             this.lblwarning.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblwarning.ForeColor = System.Drawing.Color.Crimson;
-            this.lblwarning.Location = new System.Drawing.Point(158, 393);
+            this.lblwarning.Location = new System.Drawing.Point(105, 255);
+            this.lblwarning.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblwarning.Name = "lblwarning";
-            this.lblwarning.Size = new System.Drawing.Size(201, 60);
+            this.lblwarning.Size = new System.Drawing.Size(134, 39);
             this.lblwarning.TabIndex = 6;
             this.lblwarning.Text = "Gebruikersnaam of wachtwoord is incorrect";
             // 
             // LoginComponent
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.loginComponentTLP);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "LoginComponent";
-            this.Size = new System.Drawing.Size(519, 609);
+            this.Size = new System.Drawing.Size(346, 396);
             this.loginComponentTLP.ResumeLayout(false);
             this.loginComponentTLP.PerformLayout();
             this.ResumeLayout(false);
