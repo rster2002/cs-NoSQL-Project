@@ -14,7 +14,7 @@ public class ListViewColumnSorter: IComparer {
         ObjectCompare = new CaseInsensitiveComparer();
     }
     public int Compare(object x, object y) {
-        if (ColumnToSort == 3) {
+        if (ColumnToSort == 2) {
             int returnVal;
             try {
                 DateTime firstDate = DateTime.Parse(((ListViewItem) x).SubItems[ColumnToSort].Text);
