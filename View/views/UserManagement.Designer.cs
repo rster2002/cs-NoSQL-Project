@@ -63,9 +63,9 @@
             this.centerPanel.Controls.Add(this.lstUsers);
             this.centerPanel.Controls.Add(this.btnAddUser);
             this.centerPanel.Controls.Add(this.label1);
-            this.centerPanel.Location = new System.Drawing.Point(201, 73);
+            this.centerPanel.Location = new System.Drawing.Point(201, 142);
             this.centerPanel.Name = "centerPanel";
-            this.centerPanel.Size = new System.Drawing.Size(492, 560);
+            this.centerPanel.Size = new System.Drawing.Size(492, 422);
             this.centerPanel.TabIndex = 0;
             // 
             // txtSearch
@@ -95,10 +95,10 @@
             this.clLastName,
             this.clTickets});
             this.lstUsers.HideSelection = false;
-            this.lstUsers.Location = new System.Drawing.Point(15, 160);
+            this.lstUsers.Location = new System.Drawing.Point(2, 160);
             this.lstUsers.Margin = new System.Windows.Forms.Padding(2);
             this.lstUsers.Name = "lstUsers";
-            this.lstUsers.Size = new System.Drawing.Size(459, 370);
+            this.lstUsers.Size = new System.Drawing.Size(486, 258);
             this.lstUsers.TabIndex = 3;
             this.lstUsers.UseCompatibleStateImageBehavior = false;
             this.lstUsers.View = System.Windows.Forms.View.Details;

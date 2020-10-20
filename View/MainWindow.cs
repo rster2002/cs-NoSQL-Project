@@ -48,5 +48,12 @@ namespace View {
         private void DashboardToolStripMenuItem_Click(object sender, EventArgs e) {
             LoadView(new DashboardComponent());
         }
+        
+        private void LogoutToolStripMenuItemOnClick(object sender, EventArgs e) {
+            userSession.Logout();
+
+            mainMenuStrip.Visible = false;
+            LoadView(new LoginView(this));
+        }
     }
 }

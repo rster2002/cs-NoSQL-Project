@@ -28,6 +28,7 @@
             this.DashboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ticketsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,7 +46,8 @@
             this.mainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.DashboardToolStripMenuItem,
             this.ticketsToolStripMenuItem,
-            this.usersToolStripMenuItem});
+            this.usersToolStripMenuItem,
+            this.logoutToolStripMenuItem});
             this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.mainMenuStrip.Name = "mainMenuStrip";
             this.mainMenuStrip.Size = new System.Drawing.Size(800, 24);
@@ -73,6 +75,13 @@
             this.usersToolStripMenuItem.Text = "Users";
             this.usersToolStripMenuItem.Click += new System.EventHandler(this.UsersToolStipMenuItemOnClick);
             // 
+            // logoutToolStripMenuItem
+            // 
+            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.logoutToolStripMenuItem.Text = "Logout";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.LogoutToolStripMenuItemOnClick);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -96,6 +105,7 @@
         private System.Windows.Forms.ToolStripMenuItem DashboardToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ticketsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
     }
 }
 
