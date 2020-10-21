@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using View.components;
 
 namespace View.views {
     public partial class UserManagement: UserControl {
@@ -41,6 +42,8 @@ namespace View.views {
             lvi.SubItems.Add(u.LastName.ToString());
             lvi.SubItems.Add(ticketService.GetTicketsByUser(u).Count().ToString());
 
+            lvi.Tag = u;
+
             return lvi;
         }
 
@@ -71,6 +74,19 @@ namespace View.views {
         private void btnAddUser_Click(object sender, EventArgs e) {
             AddUserForm adForm = new AddUserForm();
             adForm.ShowDialog();
+        }
+
+        private void lstUsers_DoubleClick(object sender, EventArgs e) {
+            if (lstUsers.SelectedItems.Count == 0) return;
+            ListViewItem selectedListViewItem = lstUsers.SelectedItems[0];
+            User selectedUser = (User) selectedListViewItem.Tag;
+
+            UserDetailsComponent userDetailsComponent = new UserDetailsComponent(selectedUser);
+            Popup popup = new Popup(userDetailsComponent);
+
+            userDetailsComponent.OnClose += (s1, e1) => popup.Close();
+
+            popup.ShowDialog();
         }
     }
 }

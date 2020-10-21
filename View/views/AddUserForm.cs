@@ -1,13 +1,6 @@
-﻿using System;
-using Model;
+﻿using Model;
 using Service;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;
 using System.Windows.Forms;
 
 namespace View.views {
@@ -24,11 +17,12 @@ namespace View.views {
 
         private void btnAdd_Click(object sender, EventArgs e) {
 
-            if(txtFirstName.Text != "" && txtLastName.Text != "" && cmbType.Text != "" && txtEmail.Text != "" && txtPassword.Text != "") {
+            if(txtFirstName.Text != "" && txtLastName.Text != "" && cmbType.Text != "" && txtEmail.Text != "" && txtPhoneNumber.Text != "" && cmbLocation.Text != "" && txtPassword.Text != "") {
 
                 user.Name = txtFirstName.Text;
                 user.LastName = txtLastName.Text;
                 user.Email = txtEmail.Text;
+                user.PhoneNumber = txtPhoneNumber.Text;    
                 user.PasswordHash = txtPassword.Text;
 
                 switch (cmbType.SelectedItem) {
@@ -37,6 +31,21 @@ namespace View.views {
                         break;
                     case "Editor":
                         user.UserType = UserType.Editor;
+                        break;
+                }
+
+                switch (cmbLocation.SelectedItem) {
+                    case "Haarlem":
+                        user.LocationBranch = LocationBranch.Haarlem;
+                        break;
+                    case "Amsterdam":
+                        user.LocationBranch = LocationBranch.Amsterdam;
+                        break;
+                    case "Knuppeldam":
+                        user.LocationBranch = LocationBranch.Knuppeldam;
+                        break;
+                    case "HQ":
+                        user.LocationBranch = LocationBranch.HQ;
                         break;
                 }
 

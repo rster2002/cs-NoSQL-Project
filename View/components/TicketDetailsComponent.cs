@@ -116,5 +116,14 @@ namespace View.components {
 
             popup.ShowDialog();
         }
+
+        private void ReportedByBackgroundOnClick(object sender, EventArgs e) {
+            UserDetailsComponent userDetailsComponent = new UserDetailsComponent(ticket.ReportedByUser);
+            Popup popup = new Popup(userDetailsComponent);
+
+            userDetailsComponent.OnClose += (s2, e2) => popup.Close();
+
+            popup.ShowDialog();
+        }
     }
 }

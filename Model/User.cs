@@ -17,6 +17,8 @@ namespace Model {
         public string Name { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
+        public string PhoneNumber { get; set; }
+        public LocationBranch LocationBranch { get; set; }
 
         public bool ValidateIntegraty() {
             if (Id == null) return false;

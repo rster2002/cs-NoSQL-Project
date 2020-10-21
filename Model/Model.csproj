@@ -45,6 +45,7 @@
     <Compile Include="Deadline.cs" />
     <Compile Include="IEntity.cs" />
     <Compile Include="IncidentType.cs" />
+    <Compile Include="LocationBranch.cs" />
     <Compile Include="OpenState.cs" />
     <Compile Include="Priority.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
