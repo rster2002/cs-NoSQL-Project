@@ -37,6 +37,7 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.editButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
+            this.ticketsListViewTargetPanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -66,7 +67,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(347, 126);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(347, 127);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // label1
@@ -174,22 +175,24 @@
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel1, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.editButton, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.closeButton, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.editButton, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.closeButton, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.ticketsListViewTargetPanel, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 3;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 132F));
+            this.tableLayoutPanel2.RowCount = 4;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 133F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 234F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(353, 207);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(353, 442);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // editButton
             // 
             this.editButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.editButton.Location = new System.Drawing.Point(3, 135);
+            this.editButton.Location = new System.Drawing.Point(3, 370);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(347, 31);
             this.editButton.TabIndex = 1;
@@ -199,7 +202,7 @@
             // closeButton
             // 
             this.closeButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.closeButton.Location = new System.Drawing.Point(3, 172);
+            this.closeButton.Location = new System.Drawing.Point(3, 407);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(347, 32);
             this.closeButton.TabIndex = 2;
@@ -207,13 +210,22 @@
             this.closeButton.UseVisualStyleBackColor = true;
             this.closeButton.Click += new System.EventHandler(this.CloseButtonOnClick);
             // 
+            // ticketsListViewTargetPanel
+            // 
+            this.ticketsListViewTargetPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ticketsListViewTargetPanel.Location = new System.Drawing.Point(3, 136);
+            this.ticketsListViewTargetPanel.Name = "ticketsListViewTargetPanel";
+            this.ticketsListViewTargetPanel.Size = new System.Drawing.Size(347, 228);
+            this.ticketsListViewTargetPanel.TabIndex = 3;
+            // 
             // UserDetailsComponent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel2);
+            this.MinimumSize = new System.Drawing.Size(353, 442);
             this.Name = "UserDetailsComponent";
-            this.Size = new System.Drawing.Size(353, 207);
+            this.Size = new System.Drawing.Size(353, 442);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -237,5 +249,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Button closeButton;
+        private System.Windows.Forms.Panel ticketsListViewTargetPanel;
     }
 }

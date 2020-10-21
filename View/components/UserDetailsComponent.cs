@@ -8,15 +8,31 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model;
+using Service;
 
 namespace View.components {
     public partial class UserDetailsComponent: UserControl {
+        private UserSession userSession = UserSession.GetInstance();
         private User user;
+        private TicketService ticketService = new TicketService();
 
         public UserDetailsComponent(User user) {
             this.user = user;
 
             InitializeComponent();
+
+            TicketListView ticketListView = new TicketListView(ticketService.GetTicketsByUser(user).ToList());
+            ticketListView.Dock = DockStyle.Fill;
+
+            ticketListView.OnTicketSelectedEvent += (s, e) => {
+                TicketDetailsComponent ticketDetailsComponent = new TicketDetailsComponent(e.selectedTicket);
+                Popup popup = new Popup(ticketDetailsComponent);
+
+                popup.ShowDialog();
+            };
+
+            ticketsListViewTargetPanel.Controls.Add(ticketListView);
+
             RefreshDetails();
         }
 
@@ -28,6 +44,8 @@ namespace View.components {
             emailLabel.Text = user.Email;
             phoneNumberLabel.Text = user.PhoneNumber;
             locationLabel.Text = user.LocationBranch.ToString();
+
+            editButton.Visible = userSession.LoggedInUser.UserType == UserType.Editor;
         }
 
         private void CloseButtonOnClick(object sender, EventArgs e) {

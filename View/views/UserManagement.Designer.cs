@@ -94,14 +94,17 @@
             this.clFirstName,
             this.clLastName,
             this.clTickets});
+            this.lstUsers.FullRowSelect = true;
             this.lstUsers.HideSelection = false;
             this.lstUsers.Location = new System.Drawing.Point(2, 160);
             this.lstUsers.Margin = new System.Windows.Forms.Padding(2);
+            this.lstUsers.MultiSelect = false;
             this.lstUsers.Name = "lstUsers";
             this.lstUsers.Size = new System.Drawing.Size(486, 258);
             this.lstUsers.TabIndex = 3;
             this.lstUsers.UseCompatibleStateImageBehavior = false;
             this.lstUsers.View = System.Windows.Forms.View.Details;
+            this.lstUsers.DoubleClick += new System.EventHandler(this.lstUsers_DoubleClick);
             // 
             // clId
             // 
