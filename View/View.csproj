@@ -95,6 +95,12 @@
     <Compile Include="components\TicketListView.Designer.cs">
       <DependentUpon>TicketListView.cs</DependentUpon>
     </Compile>
+    <Compile Include="components\UserDetailsComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="components\UserDetailsComponent.Designer.cs">
+      <DependentUpon>UserDetailsComponent.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="components\TicketListView.resx">
       <DependentUpon>TicketListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="components\UserDetailsComponent.resx">
+      <DependentUpon>UserDetailsComponent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>

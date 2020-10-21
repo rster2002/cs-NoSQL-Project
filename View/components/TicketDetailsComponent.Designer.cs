@@ -160,6 +160,7 @@
             this.reportedByBackground.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.reportedByBackground.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.reportedByBackground.Controls.Add(this.reportedByLabel, 0, 0);
+            this.reportedByBackground.Cursor = System.Windows.Forms.Cursors.Hand;
             this.reportedByBackground.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reportedByBackground.Location = new System.Drawing.Point(3, 46);
             this.reportedByBackground.Name = "reportedByBackground";
@@ -168,6 +169,7 @@
             this.reportedByBackground.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
             this.reportedByBackground.Size = new System.Drawing.Size(175, 37);
             this.reportedByBackground.TabIndex = 3;
+            this.reportedByBackground.Click += new System.EventHandler(this.ReportedByBackgroundOnClick);
             // 
             // reportedByLabel
             // 
