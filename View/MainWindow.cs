@@ -68,5 +68,9 @@ namespace View {
             lbl_userName.Visible = false;
             LoadView(new LoginView(this));
         }
+
+        private void MainWindow_Resize(object sender, EventArgs e) {
+            mainMenuStrip.Left = Width - mainMenuStrip.Width - 20;
+        }
     }
 }

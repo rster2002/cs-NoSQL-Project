@@ -128,6 +128,7 @@
             this.Controls.Add(this.mainMenuStrip);
             this.Name = "MainWindow";
             this.Text = "test";
+            this.Resize += new System.EventHandler(this.MainWindow_Resize);
             this.mainMenuStrip.ResumeLayout(false);
             this.mainMenuStrip.PerformLayout();
             this.ResumeLayout(false);
