@@ -15,6 +15,7 @@ namespace View.views {
     public partial class UserManagement: UserControl {
         private UserService userService;
         private TicketService ticketService;
+        private IEnumerable<Ticket> tickets;
 
         public UserManagement() {
             InitializeComponent();
@@ -31,6 +32,8 @@ namespace View.views {
         private void LoopThroughUsers() {
             IEnumerable<User> users = userService.GetUsers();
 
+            tickets = ticketService.GetTickets();
+
             lstUsers.Items.Clear();
             foreach (User user in users) {
                 lstUsers.Items.Add(AddUsers(user));
@@ -43,7 +46,7 @@ namespace View.views {
             lvi.SubItems.Add(u.Email.ToString());
             lvi.SubItems.Add(u.Name.ToString());
             lvi.SubItems.Add(u.LastName.ToString());
-            lvi.SubItems.Add(ticketService.GetTicketsByUser(u).Count().ToString());
+            lvi.SubItems.Add(tickets.Count(x => x.ReportedByUser.Id == u.Id).ToString());
 
             lvi.Tag = u;
 
