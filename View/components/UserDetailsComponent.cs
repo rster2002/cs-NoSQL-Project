@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model;
 using Service;
+using View.components;
+using View.views;
 
 namespace View.components {
     public partial class UserDetailsComponent: UserControl {
@@ -52,6 +54,11 @@ namespace View.components {
             if (OnClose != null) {
                 OnClose.Invoke(this, new EventArgs());
             }
+        }
+
+        private void editButton_Click(object sender, EventArgs e) {
+            EditUserForm euForm = new EditUserForm(user);
+            euForm.ShowDialog();
         }
     }
 }

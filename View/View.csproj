@@ -122,6 +122,12 @@
     <Compile Include="views\AddUserForm.Designer.cs">
       <DependentUpon>AddUserForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\EditUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\EditUserForm.Designer.cs">
+      <DependentUpon>EditUserForm.cs</DependentUpon>
+	</Compile>
     <Compile Include="views\ArchiveView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -185,6 +191,9 @@
     <EmbeddedResource Include="views\AddUserForm.resx">
       <DependentUpon>AddUserForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="views\EditUserForm.resx">
+      <DependentUpon>EditUserForm.cs</DependentUpon>
+	</EmbeddedResource>
     <EmbeddedResource Include="views\ArchiveView.resx">
       <DependentUpon>ArchiveView.cs</DependentUpon>
     </EmbeddedResource>

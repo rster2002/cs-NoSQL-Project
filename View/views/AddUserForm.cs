@@ -19,8 +19,9 @@ namespace View.views {
         private void btnAdd_Click(object sender, EventArgs e) {
             Random random = new Random();
 
-            if(txtFirstName.Text != "" && txtLastName.Text != "" && cmbType.Text != "" && txtEmail.Text != "" && txtPhoneNumber.Text != "" && cmbLocation.Text != "" && txtPassword.Text != "") {
+            if(txtUsername.Text != "" && txtFirstName.Text != "" && txtLastName.Text != "" && cmbType.Text != "" && txtEmail.Text != "" && txtPhoneNumber.Text != "" && cmbLocation.Text != "" && txtPassword.Text != "") {
 
+                user.Username = txtUsername.Text;
                 user.Name = txtFirstName.Text;
                 user.LastName = txtLastName.Text;
                 user.Email = txtEmail.Text;
