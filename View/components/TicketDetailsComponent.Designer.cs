@@ -180,6 +180,7 @@
             this.reportedByLabel.Size = new System.Drawing.Size(35, 13);
             this.reportedByLabel.TabIndex = 0;
             this.reportedByLabel.Text = "label1";
+            this.reportedByLabel.Click += new System.EventHandler(this.ReportedByBackgroundOnClick);
             // 
             // reportedAtBackground
             // 
