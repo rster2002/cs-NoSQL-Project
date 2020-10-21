@@ -72,10 +72,11 @@
             // 
             this.txtSearch.Location = new System.Drawing.Point(15, 116);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(155, 20);
+            this.txtSearch.Size = new System.Drawing.Size(190, 20);
             this.txtSearch.TabIndex = 0;
-            this.txtSearch.Text = "Enter an email and press enter";
+            this.txtSearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtSearch_MouseClick);
             this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
+            this.txtSearch.Leave += new System.EventHandler(this.txtSearch_Leave);
             // 
             // label2
             // 

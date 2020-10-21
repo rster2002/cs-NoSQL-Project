@@ -40,6 +40,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.cmbLocation = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtUsername = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -56,7 +58,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(16, 75);
+            this.label2.Location = new System.Drawing.Point(16, 120);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 16);
             this.label2.TabIndex = 1;
@@ -66,7 +68,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(17, 115);
+            this.label3.Location = new System.Drawing.Point(16, 158);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 16);
             this.label3.TabIndex = 2;
@@ -76,7 +78,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(16, 161);
+            this.label4.Location = new System.Drawing.Point(16, 196);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(103, 16);
             this.label4.TabIndex = 3;
@@ -86,7 +88,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(16, 204);
+            this.label5.Location = new System.Drawing.Point(16, 235);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(112, 16);
             this.label5.TabIndex = 4;
@@ -96,7 +98,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(17, 340);
+            this.label6.Location = new System.Drawing.Point(16, 342);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(80, 16);
             this.label6.TabIndex = 5;
@@ -104,28 +106,28 @@
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(204, 75);
+            this.txtFirstName.Location = new System.Drawing.Point(204, 119);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(183, 20);
             this.txtFirstName.TabIndex = 6;
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(204, 115);
+            this.txtLastName.Location = new System.Drawing.Point(204, 157);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(183, 20);
             this.txtLastName.TabIndex = 7;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(204, 204);
+            this.txtEmail.Location = new System.Drawing.Point(204, 234);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(183, 20);
             this.txtEmail.TabIndex = 8;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(204, 340);
+            this.txtPassword.Location = new System.Drawing.Point(204, 342);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(183, 20);
             this.txtPassword.TabIndex = 9;
@@ -138,7 +140,7 @@
             this.cmbType.Items.AddRange(new object[] {
             "Normal",
             "Editor"});
-            this.cmbType.Location = new System.Drawing.Point(204, 161);
+            this.cmbType.Location = new System.Drawing.Point(204, 195);
             this.cmbType.Name = "cmbType";
             this.cmbType.Size = new System.Drawing.Size(183, 21);
             this.cmbType.TabIndex = 10;
@@ -171,7 +173,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(17, 247);
+            this.label7.Location = new System.Drawing.Point(16, 271);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(111, 16);
             this.label7.TabIndex = 13;
@@ -181,7 +183,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(16, 294);
+            this.label8.Location = new System.Drawing.Point(16, 308);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(123, 16);
             this.label8.TabIndex = 14;
@@ -189,7 +191,7 @@
             // 
             // txtPhoneNumber
             // 
-            this.txtPhoneNumber.Location = new System.Drawing.Point(204, 247);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(204, 270);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(183, 20);
             this.txtPhoneNumber.TabIndex = 15;
@@ -203,16 +205,35 @@
             "Amsterdam",
             "Knuppeldam",
             "HQ"});
-            this.cmbLocation.Location = new System.Drawing.Point(204, 294);
+            this.cmbLocation.Location = new System.Drawing.Point(204, 308);
             this.cmbLocation.Name = "cmbLocation";
             this.cmbLocation.Size = new System.Drawing.Size(183, 21);
             this.cmbLocation.TabIndex = 16;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(16, 82);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(83, 16);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "Username:";
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.Location = new System.Drawing.Point(204, 82);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(183, 20);
+            this.txtUsername.TabIndex = 18;
             // 
             // AddUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(714, 450);
+            this.Controls.Add(this.txtUsername);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.cmbLocation);
             this.Controls.Add(this.txtPhoneNumber);
             this.Controls.Add(this.label8);
@@ -256,5 +277,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtPhoneNumber;
         private System.Windows.Forms.ComboBox cmbLocation;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtUsername;
     }
 }

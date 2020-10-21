@@ -19,6 +19,9 @@ namespace View.views {
         public UserManagement() {
             InitializeComponent();
 
+            txtSearch.Text = "Enter a letter or email and press enter...";
+            txtSearch.ForeColor = Color.Gray;
+
             userService = new UserService();
             ticketService = new TicketService();
 
@@ -49,7 +52,7 @@ namespace View.views {
 
         private void txtSearch_KeyDown(object sender, KeyEventArgs e) {
 
-            if(e.KeyCode == Keys.Enter) {
+            if (e.KeyCode == Keys.Enter) {
 
                 // Get the query string and get the list of users
                 string query = ((TextBox) sender).Text.ToLower();
@@ -87,6 +90,20 @@ namespace View.views {
             userDetailsComponent.OnClose += (s1, e1) => popup.Close();
 
             popup.ShowDialog();
+        }
+
+        private void txtSearch_MouseClick(object sender, MouseEventArgs e) {
+            if (txtSearch.Text == "Enter a letter or email and press enter...") {
+                txtSearch.Text = "";
+                txtSearch.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtSearch_Leave(object sender, EventArgs e) {
+            if (txtSearch.Text == "") {
+                txtSearch.Text = "Enter a letter or email and press enter...";
+                txtSearch.ForeColor = Color.Gray;
+            }
         }
     }
 }
