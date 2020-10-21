@@ -29,6 +29,10 @@ namespace Service {
             }
             return false;
         }
+
+        public void Logout() {
+            LoggedInUser = null;
+        }
         
         public string Encrypt(string strData, int salt) {
             return EncryptHash(strData + salt.ToString());

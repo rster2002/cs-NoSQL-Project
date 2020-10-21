@@ -43,5 +43,12 @@ namespace View {
         private void UsersToolStipMenuItemOnClick(object sender, EventArgs e) {
             LoadView(new UserManagement());
         }
+
+        private void LogoutToolStripMenuItemOnClick(object sender, EventArgs e) {
+            userSession.Logout();
+
+            mainMenuStrip.Visible = false;
+            LoadView(new LoginView(this));
+        }
     }
 }
