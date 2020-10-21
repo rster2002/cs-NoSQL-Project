@@ -6,6 +6,12 @@
 * Jordy (648270)
 * Cheeyau (645698)
 
+**Taakverdeling**
+* Bjørn: Tickets, DAL, Sluiten en escaleren tickets
+* Owen: Dashboard, Archive, en design
+* Jordy: User management, filteren tickets
+* Cheeyau: Login, sorteren tickets
+
 **Test users**
 | Username | Password | Usertype |
 | :- | :- | :-: |
