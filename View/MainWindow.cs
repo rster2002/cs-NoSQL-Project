@@ -32,7 +32,10 @@ namespace View {
         }
 
         public void ShowMenuControls(bool show = false) {
-            usersToolStripMenuItem.Visible = userSession.LoggedInUser.UserType == UserType.Editor;
+            bool loggedInUserIsEditor = userSession.LoggedInUser.UserType == UserType.Editor;
+
+            usersToolStripMenuItem.Visible = loggedInUserIsEditor;
+            ArchiveToolStripMenuItem.Visible = loggedInUserIsEditor;
             mainMenuStrip.Visible = show;
         }
 
@@ -42,6 +45,10 @@ namespace View {
 
         private void UsersToolStipMenuItemOnClick(object sender, EventArgs e) {
             LoadView(new UserManagement());
+        }
+
+        private void ArchiveToolStripMenuItem_Click(object sender, EventArgs e) {
+            LoadView(new ArchiveView());
         }
 
         private void DashboardToolStripMenuItem_Click(object sender, EventArgs e) {

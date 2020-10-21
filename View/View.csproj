@@ -62,6 +62,12 @@
     <Compile Include="components\BaseTicketEditorComponent.Designer.cs">
       <DependentUpon>BaseTicketEditorComponent.cs</DependentUpon>
     </Compile>
+    <Compile Include="components\ArchiveComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="components\ArchiveComponent.Designer.cs">
+      <DependentUpon>ArchiveComponent.cs</DependentUpon>
+    </Compile>
     <Compile Include="components\ListViewColumnSorter.cs" />
     <Compile Include="components\LoginComponent.cs">
       <SubType>UserControl</SubType>
@@ -96,6 +102,12 @@
     <Compile Include="components\TicketListView.Designer.cs">
       <DependentUpon>TicketListView.cs</DependentUpon>
     </Compile>
+    <Compile Include="components\UserDetailsComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="components\UserDetailsComponent.Designer.cs">
+      <DependentUpon>UserDetailsComponent.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +121,12 @@
     </Compile>
     <Compile Include="views\AddUserForm.Designer.cs">
       <DependentUpon>AddUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\ArchiveView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\ArchiveView.Designer.cs">
+      <DependentUpon>ArchiveView.cs</DependentUpon>
     </Compile>
     <Compile Include="views\TicketManager.cs">
       <SubType>UserControl</SubType>
@@ -131,6 +149,9 @@
     <EmbeddedResource Include="components\BaseTicketEditorComponent.resx">
       <DependentUpon>BaseTicketEditorComponent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="components\ArchiveComponent.resx">
+      <DependentUpon>ArchiveComponent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="components\LoginComponent.resx">
       <DependentUpon>LoginComponent.cs</DependentUpon>
     </EmbeddedResource>
@@ -146,6 +167,9 @@
     <EmbeddedResource Include="components\TicketListView.resx">
       <DependentUpon>TicketListView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="components\UserDetailsComponent.resx">
+      <DependentUpon>UserDetailsComponent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,6 +184,9 @@
     </Compile>
     <EmbeddedResource Include="views\AddUserForm.resx">
       <DependentUpon>AddUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\ArchiveView.resx">
+      <DependentUpon>ArchiveView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\TicketManager.resx">
       <DependentUpon>TicketManager.cs</DependentUpon>

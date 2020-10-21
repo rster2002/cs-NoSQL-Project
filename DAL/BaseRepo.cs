@@ -59,8 +59,12 @@ namespace DAL {
             Delete(entity.Id);
         }
 
-        public void Delete(Func<T, bool> func) {
-            throw new NotImplementedException();
+        public void DeleteMultiple(T[] entities) {
+            collection.DeleteMany(x => entities.Any(y => x.Id == y.Id));
+        }
+
+        public void DeleteMultiple(Expression<Func<T, bool>> expression) {
+            collection.DeleteMany(expression);
         }
     }
 }
