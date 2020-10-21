@@ -90,7 +90,7 @@
             // 
             this.btn_archiveAndDelete.Enabled = false;
             this.btn_archiveAndDelete.ForeColor = System.Drawing.Color.Red;
-            this.btn_archiveAndDelete.Location = new System.Drawing.Point(207, 264);
+            this.btn_archiveAndDelete.Location = new System.Drawing.Point(207, 155);
             this.btn_archiveAndDelete.Name = "btn_archiveAndDelete";
             this.btn_archiveAndDelete.Size = new System.Drawing.Size(193, 23);
             this.btn_archiveAndDelete.TabIndex = 3;
@@ -101,7 +101,7 @@
             // btn_archive
             // 
             this.btn_archive.Enabled = false;
-            this.btn_archive.Location = new System.Drawing.Point(3, 264);
+            this.btn_archive.Location = new System.Drawing.Point(3, 155);
             this.btn_archive.Name = "btn_archive";
             this.btn_archive.Size = new System.Drawing.Size(198, 23);
             this.btn_archive.TabIndex = 2;
@@ -136,9 +136,10 @@
             // 
             // ticketListViewTargetPanel
             // 
-            this.ticketListViewTargetPanel.Location = new System.Drawing.Point(3, 144);
+            this.ticketListViewTargetPanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ticketListViewTargetPanel.Location = new System.Drawing.Point(406, 0);
             this.ticketListViewTargetPanel.Name = "ticketListViewTargetPanel";
-            this.ticketListViewTargetPanel.Size = new System.Drawing.Size(397, 114);
+            this.ticketListViewTargetPanel.Size = new System.Drawing.Size(390, 352);
             this.ticketListViewTargetPanel.TabIndex = 9;
             // 
             // ArchiveComponent
@@ -154,7 +155,7 @@
             this.Controls.Add(this.dtp_endDate);
             this.Controls.Add(this.dtp_beginDate);
             this.Name = "ArchiveComponent";
-            this.Size = new System.Drawing.Size(403, 290);
+            this.Size = new System.Drawing.Size(796, 352);
             this.ResumeLayout(false);
             this.PerformLayout();
 
