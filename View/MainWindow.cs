@@ -37,6 +37,10 @@ namespace View {
             usersToolStripMenuItem.Visible = loggedInUserIsEditor;
             ArchiveToolStripMenuItem.Visible = loggedInUserIsEditor;
             mainMenuStrip.Visible = show;
+
+            lbl_userName.Text = $"Welcome, {userSession.LoggedInUser.Name}";
+            lbl_userName.Show();
+            mainMenuStrip.Left = Width - mainMenuStrip.Width - 20;
         }
 
         private void TicketsToolStripMenuItem_Click(object sender, EventArgs e) {
