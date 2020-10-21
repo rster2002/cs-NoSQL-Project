@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using View.components;
 using View.views;
 
 
@@ -45,6 +46,10 @@ namespace View {
             LoadView(new UserManagement());
         }
 
+        private void DashboardToolStripMenuItem_Click(object sender, EventArgs e) {
+            LoadView(new DashboardComponent());
+        }
+        
         private void LogoutToolStripMenuItemOnClick(object sender, EventArgs e) {
             userSession.Logout();
 

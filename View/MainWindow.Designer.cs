@@ -25,7 +25,7 @@
         private void InitializeComponent() {
             this.mainPanel = new System.Windows.Forms.Panel();
             this.mainMenuStrip = new System.Windows.Forms.MenuStrip();
-            this.dashboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.DashboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ticketsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 <<<<<<< HEAD
@@ -48,7 +48,7 @@
             // 
             this.mainMenuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.mainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dashboardToolStripMenuItem,
+            this.DashboardToolStripMenuItem,
             this.ticketsToolStripMenuItem,
             this.usersToolStripMenuItem,
 <<<<<<< HEAD
@@ -62,11 +62,12 @@
             this.mainMenuStrip.TabIndex = 1;
             this.mainMenuStrip.Text = "menuStrip1";
             // 
-            // dashboardToolStripMenuItem
+            // DashboardToolStripMenuItem
             // 
-            this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
-            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
-            this.dashboardToolStripMenuItem.Text = "Dashboard";
+            this.DashboardToolStripMenuItem.Name = "DashboardToolStripMenuItem";
+            this.DashboardToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+            this.DashboardToolStripMenuItem.Text = "Dashboard";
+            this.DashboardToolStripMenuItem.Click += new System.EventHandler(this.DashboardToolStripMenuItem_Click);
             // 
             // ticketsToolStripMenuItem
             // 
@@ -118,7 +119,7 @@
 
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.MenuStrip mainMenuStrip;
-        private System.Windows.Forms.ToolStripMenuItem dashboardToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem DashboardToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ticketsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
