@@ -11,3 +11,4 @@
 | :- | :- | :-: |
 | CaptainJack | BlackPearl | Normal |
 | CaptainBarbossa | yarr | Editor (admin) |
+| (Any other user) | HelloWorld | (random role) |

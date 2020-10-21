@@ -3,15 +3,10 @@ using Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.DataVisualization.Charting;
 
 namespace View.components {
-    public partial class ArchiveView : UserControl {
+    public partial class ArchiveView: UserControl {
         private ArchiveService archiveService = new ArchiveService();
         private TicketListView TicketListView = new TicketListView(new List<Ticket>());
 
@@ -60,8 +55,7 @@ namespace View.components {
             if (ticketCount > 0) {
                 btn_archive.Enabled = true;
                 btn_archiveAndDelete.Enabled = true;
-            } 
-            else {
+            } else {
                 btn_archive.Enabled = false;
                 btn_archiveAndDelete.Enabled = false;
             }

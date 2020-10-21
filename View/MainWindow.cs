@@ -1,13 +1,6 @@
 ﻿using Model;
 using Service;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using View.components;
 using View.views;
@@ -60,7 +53,7 @@ namespace View {
         private void DashboardToolStripMenuItem_Click(object sender, EventArgs e) {
             LoadView(new DashboardView());
         }
-        
+
         private void LogoutToolStripMenuItemOnClick(object sender, EventArgs e) {
             userSession.Logout();
 

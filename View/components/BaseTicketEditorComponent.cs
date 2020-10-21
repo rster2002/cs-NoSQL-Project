@@ -1,16 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Model;
+﻿using Model;
 using Service;
-using System.Security.Cryptography.X509Certificates;
-using System.Runtime.Remoting.Channels;
+using System;
+using System.Windows.Forms;
 
 namespace View.components {
     public abstract partial class BaseTicketEditorComponent: UserControl {
@@ -86,7 +77,7 @@ namespace View.components {
             if (ticket.Id != null) ticketId = ticket.Id;
             if (ticket.Subject != null) subjectTextBox.Text = ticket.Subject;
             if (ticket.Description != null) descriptionTextBox.Text = ticket.Description;
-            
+
             SetComboBoxByValue(typeOfIncidentComboBox, ticket.TypeOfIncident);
             SetComboBoxByValue(priorityComboBox, ticket.Priority);
             SetComboBoxByValue(deadlineComboBox, ticket.Deadline);
@@ -130,7 +121,7 @@ namespace View.components {
                 ReportedByUser = selectedUser,
                 OpenStatus = openState,
             };
-            
+
             // Trigger callback
             OnConfirm(ticket);
         }
@@ -202,7 +193,7 @@ namespace View.components {
         protected void AllowChangingDateTimeReported(bool allowChange) {
             dateTimeReportedPicker.Enabled = allowChange;
         }
-        
+
         protected void AllowChangingReportedBy(bool allowChange) {
             selectUserButton.Enabled = allowChange;
         }

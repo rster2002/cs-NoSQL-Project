@@ -1,14 +1,10 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Model;
-using System.Windows.Data;
 
 namespace View.components {
     public partial class TicketListView: UserControl {
@@ -82,17 +78,17 @@ namespace View.components {
         }
 
         private void TicketsListView_SelectedIndexChanged(object sender, ColumnClickEventArgs e) {
-             
-                if (e.Column == lvwColumnSorter.SortColumn) {
-                    if (lvwColumnSorter.Order == SortOrder.Ascending) {
-                        lvwColumnSorter.Order = SortOrder.Descending;
-                    } else {
-                        lvwColumnSorter.Order = SortOrder.Ascending;
-                    }
+
+            if (e.Column == lvwColumnSorter.SortColumn) {
+                if (lvwColumnSorter.Order == SortOrder.Ascending) {
+                    lvwColumnSorter.Order = SortOrder.Descending;
                 } else {
-                    lvwColumnSorter.SortColumn = e.Column;
                     lvwColumnSorter.Order = SortOrder.Ascending;
                 }
+            } else {
+                lvwColumnSorter.SortColumn = e.Column;
+                lvwColumnSorter.Order = SortOrder.Ascending;
+            }
             ticketsListView.Sort();
         }
     }

@@ -3,9 +3,6 @@ using Model;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Service {
     public class ArchiveService {
@@ -40,7 +37,7 @@ namespace Service {
         }
         */
         // x => CompareDate(UseBeginDate, x.DateReported, BeginDate) && CompareDate(UseEndDate, EndDate, x.DateReported)
-        public long GetTicketCount() => ticketRepo.Count(x => 
+        public long GetTicketCount() => ticketRepo.Count(x =>
             (!UseBeginDate || x.DateReported > BeginDate) &&
             (!UseEndDate || x.DateReported < EndDate)
         );

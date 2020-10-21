@@ -1,7 +1,7 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections;
 using System.Windows.Forms;
-using Model;
 
 public class ListViewColumnSorter: IComparer {
     private int ColumnToSort;
@@ -27,12 +27,12 @@ public class ListViewColumnSorter: IComparer {
             if (OrderOfSort == SortOrder.Descending)
                 returnVal *= -1;
             return returnVal;
-        } else if(ColumnToSort == 4) {
+        } else if (ColumnToSort == 4) {
             int compareResult;
             Priority listviewX, listviewY;
             listviewX = (Priority) Enum.Parse(typeof(Priority), ((ListViewItem) x).SubItems[ColumnToSort].Text.ToString());
             listviewY = (Priority) Enum.Parse(typeof(Priority), ((ListViewItem) y).SubItems[ColumnToSort].Text.ToString());
-            
+
             compareResult = ObjectCompare.Compare(listviewX, listviewY);
             if (OrderOfSort == SortOrder.Ascending) {
                 return compareResult;

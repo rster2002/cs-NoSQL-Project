@@ -1,16 +1,11 @@
-﻿using System;
+﻿using Model;
+using Service;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Service;
 using View.components;
-using Model;
-using System.Data.SqlTypes;
 
 namespace View.views {
     public partial class TicketManager: UserControl {
@@ -49,13 +44,13 @@ namespace View.views {
 
         private List<Ticket> FilterTickets(List<Ticket> filterTickets) {
             return filterTickets.Where(ticket => {
-                    // Check whether or not some fields contians the query.
-                    if (ticket.Subject.ToLower().Contains(query)) return true;
-                    if (ticket.Description.ToLower().Contains(query)) return true;
-                    if (ticket.ReportedByUser.ToString().ToLower().Contains(query)) return true;
+                // Check whether or not some fields contians the query.
+                if (ticket.Subject.ToLower().Contains(query)) return true;
+                if (ticket.Description.ToLower().Contains(query)) return true;
+                if (ticket.ReportedByUser.ToString().ToLower().Contains(query)) return true;
 
-                    return false;
-                })
+                return false;
+            })
                 .ToList();
         }
 

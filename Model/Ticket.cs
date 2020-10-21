@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MongoDB.Bson;
+﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using System;
+using System.Collections.Generic;
 
 namespace Model {
-    public class Ticket : IEntity {
+    public class Ticket: IEntity {
         private Dictionary<Deadline, TimeSpan> deadlineTimespanMap = new Dictionary<Deadline, TimeSpan>() {
             { Deadline.SevenDays, new TimeSpan(7, 0, 0, 0) },
             { Deadline.FourteenDays, new TimeSpan(14, 0, 0, 0) },

@@ -1,14 +1,10 @@
-﻿using System;
+﻿using Model;
+using Service;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Service;
-using Model;
 
 namespace View.components {
     public partial class SelectUserComponent: UserControl {
@@ -69,15 +65,15 @@ namespace View.components {
 
             // Filter and map the users
             List<ListViewItem> listViewItems = users.Where(user => {
-                    // If one of the fields contains the query, return true
-                    string firstName = user.Name.ToLower();
-                    string lastName = user.LastName.ToLower();
-                    string emailAddress = user.Email.ToLower();
+                // If one of the fields contains the query, return true
+                string firstName = user.Name.ToLower();
+                string lastName = user.LastName.ToLower();
+                string emailAddress = user.Email.ToLower();
 
-                    return firstName.Contains(query) ||
-                        lastName.Contains(query) ||
-                        emailAddress.Contains(query);
-                })
+                return firstName.Contains(query) ||
+                    lastName.Contains(query) ||
+                    emailAddress.Contains(query);
+            })
                 .Select(MapUserToListViewItem)
                 .ToList();
 

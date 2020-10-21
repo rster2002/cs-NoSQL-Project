@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DAL;
-using Model;
-using View.components;
+﻿using DAL;
+using System;
 
 namespace TestConsole {
     class Program {

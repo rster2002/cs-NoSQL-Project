@@ -1,24 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Model;
+﻿using Model;
 using Service;
-using System.Security.Cryptography;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace View.components {
     public partial class LoginComponent: UserControl {
-        
+
         private User user = new User();
         private UserService userService = new UserService();
         public LoginComponent() {
             InitializeComponent();
-            lblwarning.Hide();   
+            lblwarning.Hide();
         }
 
         public event EventHandler OnLogin;

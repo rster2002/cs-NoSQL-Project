@@ -1,12 +1,10 @@
 ﻿using Model;
-using MongoDB.Bson;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Runtime.CompilerServices;
 
 namespace DAL {
     public abstract class BaseRepo<T>: IRepo<T> where T : IEntity {
@@ -29,7 +27,7 @@ namespace DAL {
         }
 
         public IEnumerable<T> Get(Expression<Func<T, bool>> expression) {
-             return collection.Find(expression).ToList();
+            return collection.Find(expression).ToList();
         }
 
         public T Get(string id) {

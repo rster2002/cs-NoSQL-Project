@@ -1,14 +1,6 @@
-using Microsoft.AspNetCore.Cryptography.KeyDerivation;
-using DAL;
 using Model;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.Remoting.Messaging;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Service {
     public class UserSession {
@@ -33,7 +25,7 @@ namespace Service {
         public void Logout() {
             LoggedInUser = null;
         }
-        
+
         public string Encrypt(string strData, int salt) {
             return EncryptHash(strData + salt.ToString());
         }

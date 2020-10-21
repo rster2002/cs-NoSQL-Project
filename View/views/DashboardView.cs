@@ -3,15 +3,11 @@ using Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.DataVisualization.Charting;
 
 namespace View.components {
-    public partial class DashboardView : UserControl {
+    public partial class DashboardView: UserControl {
         private TicketService ticketService = new TicketService();
         public DashboardView() {
             InitializeComponent();
