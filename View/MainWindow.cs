@@ -31,9 +31,7 @@ namespace View {
         }
 
         public void ShowMenuControls(bool show = false) {
-            if (userSession.LoggedInUser.UserType == UserType.Normal) {
-                usersToolStripMenuItem.Visible = false;
-            }
+            usersToolStripMenuItem.Visible = userSession.LoggedInUser.UserType == UserType.Editor;
             mainMenuStrip.Visible = show;
         }
 
