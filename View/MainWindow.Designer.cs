@@ -28,7 +28,11 @@
             this.dashboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ticketsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+<<<<<<< HEAD
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+=======
+            this.ArchiveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+>>>>>>> bae609b5b452d066b9c095ba0275630c08965f9a
             this.mainMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +51,11 @@
             this.dashboardToolStripMenuItem,
             this.ticketsToolStripMenuItem,
             this.usersToolStripMenuItem,
+<<<<<<< HEAD
             this.logoutToolStripMenuItem});
+=======
+            this.ArchiveToolStripMenuItem});
+>>>>>>> bae609b5b452d066b9c095ba0275630c08965f9a
             this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.mainMenuStrip.Name = "mainMenuStrip";
             this.mainMenuStrip.Size = new System.Drawing.Size(800, 24);
@@ -74,12 +82,21 @@
             this.usersToolStripMenuItem.Text = "Users";
             this.usersToolStripMenuItem.Click += new System.EventHandler(this.UsersToolStipMenuItemOnClick);
             // 
+<<<<<<< HEAD
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
             this.logoutToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.LogoutToolStripMenuItemOnClick);
+=======
+            // ArchiveToolStripMenuItem
+            // 
+            this.ArchiveToolStripMenuItem.Name = "ArchiveToolStripMenuItem";
+            this.ArchiveToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.ArchiveToolStripMenuItem.Text = "Archive";
+            this.ArchiveToolStripMenuItem.Click += new System.EventHandler(this.ArchiveToolStripMenuItem_Click);
+>>>>>>> bae609b5b452d066b9c095ba0275630c08965f9a
             // 
             // MainWindow
             // 
@@ -105,6 +122,7 @@
         private System.Windows.Forms.ToolStripMenuItem ticketsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ArchiveToolStripMenuItem;
     }
 }
 

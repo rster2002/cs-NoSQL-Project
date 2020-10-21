@@ -32,6 +32,7 @@ namespace View {
         public void ShowMenuControls(bool show = false) {
             if (userSession.LoggedInUser.UserType == UserType.Normal) {
                 usersToolStripMenuItem.Visible = false;
+                ArchiveToolStripMenuItem.Visible = false;
             }
             mainMenuStrip.Visible = show;
         }
@@ -49,6 +50,10 @@ namespace View {
 
             mainMenuStrip.Visible = false;
             LoadView(new LoginView(this));
+        }
+
+        private void ArchiveToolStripMenuItem_Click(object sender, EventArgs e) {
+            LoadView(new ArchiveView());
         }
     }
 }

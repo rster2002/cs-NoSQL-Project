@@ -1,5 +1,5 @@
 ﻿namespace View.views {
-    partial class LoginView {
+    partial class ArchiveView {
         /// <summary> 
         /// Required designer variable.
         /// </summary>
@@ -23,25 +23,23 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.centerPanel = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // centerPanel
+            // panel1
             // 
-            this.centerPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.centerPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.centerPanel.Location = new System.Drawing.Point(192, 27);
-            this.centerPanel.Name = "centerPanel";
-            this.centerPanel.Size = new System.Drawing.Size(359, 398);
-            this.centerPanel.TabIndex = 1;
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.Location = new System.Drawing.Point(168, 120);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(403, 193);
+            this.panel1.TabIndex = 0;
             // 
-            // LoginView
+            // ArchiveView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.centerPanel);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "LoginView";
+            this.Controls.Add(this.panel1);
+            this.Name = "ArchiveView";
             this.Size = new System.Drawing.Size(743, 452);
             this.ResumeLayout(false);
 
@@ -49,6 +47,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel centerPanel;
+        private System.Windows.Forms.Panel panel1;
     }
 }
