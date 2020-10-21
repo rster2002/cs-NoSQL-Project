@@ -24,6 +24,10 @@ namespace View.components {
         public event EventHandler OnLogin;
 
         private void BtnLogin_Click(object sender, EventArgs e) {
+            Login();
+        }
+
+        private void Login() {
             UserSession userSession = UserSession.GetInstance();
             var userName = TBUserName.Text;
             string password = TBpassword.Text;
@@ -55,6 +59,11 @@ namespace View.components {
                 }
             }
             return null;
+        }
+
+        private void TBpassword_KeyUp(object sender, KeyEventArgs e) {
+            if (e.KeyCode == Keys.Enter)
+                Login();
         }
     }
 }

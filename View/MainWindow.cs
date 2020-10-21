@@ -37,6 +37,12 @@ namespace View {
             usersToolStripMenuItem.Visible = loggedInUserIsEditor;
             ArchiveToolStripMenuItem.Visible = loggedInUserIsEditor;
             mainMenuStrip.Visible = show;
+            lbl_userName.Visible = show;
+
+            if (show) {
+                lbl_userName.Text = $"Welcome, {userSession.LoggedInUser.Name}";
+                mainMenuStrip.Left = Width - mainMenuStrip.Width - 20;
+            }
         }
 
         private void TicketsToolStripMenuItem_Click(object sender, EventArgs e) {
@@ -52,13 +58,14 @@ namespace View {
         }
 
         private void DashboardToolStripMenuItem_Click(object sender, EventArgs e) {
-            LoadView(new DashboardComponent());
+            LoadView(new DashboardView());
         }
         
         private void LogoutToolStripMenuItemOnClick(object sender, EventArgs e) {
             userSession.Logout();
 
             mainMenuStrip.Visible = false;
+            lbl_userName.Visible = false;
             LoadView(new LoginView(this));
         }
     }

@@ -67,14 +67,17 @@
             // 
             // createTicketButton
             // 
+            this.createTicketButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(155)))), ((int)(((byte)(213)))));
             this.createTicketButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.createTicketButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.createTicketButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createTicketButton.ForeColor = System.Drawing.Color.White;
             this.createTicketButton.Location = new System.Drawing.Point(429, 3);
             this.createTicketButton.Name = "createTicketButton";
             this.createTicketButton.Size = new System.Drawing.Size(421, 40);
             this.createTicketButton.TabIndex = 0;
             this.createTicketButton.Text = "Create ticket";
-            this.createTicketButton.UseVisualStyleBackColor = true;
+            this.createTicketButton.UseVisualStyleBackColor = false;
             this.createTicketButton.Click += new System.EventHandler(this.CreateTicketButtonOnClick);
             // 
             // tableLayoutPanel3
