@@ -29,9 +29,9 @@
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1.Location = new System.Drawing.Point(168, 120);
+            this.panel1.Location = new System.Drawing.Point(168, 75);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(403, 193);
+            this.panel1.Size = new System.Drawing.Size(403, 290);
             this.panel1.TabIndex = 0;
             // 
             // ArchiveView

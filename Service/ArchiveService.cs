@@ -45,7 +45,7 @@ namespace Service {
             (!UseEndDate || x.DateReported < EndDate)
         );
 
-        private List<Ticket> GetTickets() {
+        public List<Ticket> GetTickets() {
             return (List<Ticket>) ticketRepo.Get(x =>
             (!UseBeginDate || x.DateReported > BeginDate) &&
             (!UseEndDate || x.DateReported < EndDate));

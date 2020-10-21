@@ -33,6 +33,7 @@
             this.lbl_ticketCount = new System.Windows.Forms.Label();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.label1 = new System.Windows.Forms.Label();
+            this.ticketListViewTargetPanel = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // dtp_beginDate
@@ -81,7 +82,7 @@
             this.btn_getTicketCount.Name = "btn_getTicketCount";
             this.btn_getTicketCount.Size = new System.Drawing.Size(397, 23);
             this.btn_getTicketCount.TabIndex = 7;
-            this.btn_getTicketCount.Text = "Get Ticket Count";
+            this.btn_getTicketCount.Text = "Preview tickets";
             this.btn_getTicketCount.UseVisualStyleBackColor = true;
             this.btn_getTicketCount.Click += new System.EventHandler(this.btn_getTicketCount_Click);
             // 
@@ -89,7 +90,7 @@
             // 
             this.btn_archiveAndDelete.Enabled = false;
             this.btn_archiveAndDelete.ForeColor = System.Drawing.Color.Red;
-            this.btn_archiveAndDelete.Location = new System.Drawing.Point(207, 157);
+            this.btn_archiveAndDelete.Location = new System.Drawing.Point(207, 264);
             this.btn_archiveAndDelete.Name = "btn_archiveAndDelete";
             this.btn_archiveAndDelete.Size = new System.Drawing.Size(193, 23);
             this.btn_archiveAndDelete.TabIndex = 3;
@@ -100,7 +101,7 @@
             // btn_archive
             // 
             this.btn_archive.Enabled = false;
-            this.btn_archive.Location = new System.Drawing.Point(3, 157);
+            this.btn_archive.Location = new System.Drawing.Point(3, 264);
             this.btn_archive.Name = "btn_archive";
             this.btn_archive.Size = new System.Drawing.Size(198, 23);
             this.btn_archive.TabIndex = 2;
@@ -133,8 +134,16 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Filter data on Reported date:";
             // 
+            // ticketListViewTargetPanel
+            // 
+            this.ticketListViewTargetPanel.Location = new System.Drawing.Point(3, 144);
+            this.ticketListViewTargetPanel.Name = "ticketListViewTargetPanel";
+            this.ticketListViewTargetPanel.Size = new System.Drawing.Size(397, 114);
+            this.ticketListViewTargetPanel.TabIndex = 9;
+            // 
             // ArchiveComponent
             // 
+            this.Controls.Add(this.ticketListViewTargetPanel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_archive);
             this.Controls.Add(this.btn_archiveAndDelete);
@@ -145,7 +154,7 @@
             this.Controls.Add(this.dtp_endDate);
             this.Controls.Add(this.dtp_beginDate);
             this.Name = "ArchiveComponent";
-            this.Size = new System.Drawing.Size(403, 193);
+            this.Size = new System.Drawing.Size(403, 290);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,5 +172,6 @@
         private System.Windows.Forms.Button btn_archiveAndDelete;
         private System.Windows.Forms.Button btn_archive;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel ticketListViewTargetPanel;
     }
 }

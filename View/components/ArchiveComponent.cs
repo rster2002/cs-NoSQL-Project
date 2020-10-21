@@ -13,8 +13,19 @@ using System.Windows.Forms.DataVisualization.Charting;
 namespace View.components {
     public partial class ArchiveComponent : UserControl {
         private ArchiveService archiveService = new ArchiveService();
+        private TicketListView TicketListView = new TicketListView(new List<Ticket>());
+
         public ArchiveComponent() {
             InitializeComponent();
+
+            TicketListView.OnTicketSelectedEvent += (s1, e1) => {
+                TicketDetailsComponent ticketDetailsComponent = new TicketDetailsComponent(e1.selectedTicket);
+                Popup popup = new Popup(ticketDetailsComponent);
+                popup.ShowDialog();
+            };
+
+            TicketListView.Dock = DockStyle.Fill;
+            ticketListViewTargetPanel.Controls.Add(TicketListView);
         }
 
         public ArchiveComponent(IContainer container) {
@@ -40,8 +51,11 @@ namespace View.components {
             archiveService.UseBeginDate = cb_beginDate.Checked;
             archiveService.UseEndDate = cb_endDate.Checked;
 
-            ticketCount = archiveService.GetTicketCount();
+            List<Ticket> ticketsToBeArchived = archiveService.GetTickets();
+            ticketCount = ticketsToBeArchived.Count;
             lbl_ticketCount.Text = $"Ticket Count: {ticketCount}";
+
+            TicketListView.SetTickets(ticketsToBeArchived);
 
             if (ticketCount > 0) {
                 btn_archive.Enabled = true;
