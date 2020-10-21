@@ -48,7 +48,7 @@
             this.DashboardToolStripMenuItem,
             this.ticketsToolStripMenuItem,
             this.usersToolStripMenuItem,
-            this.ArchiveToolStripMenuItem});
+            this.ArchiveToolStripMenuItem,
             this.logoutToolStripMenuItem});
             this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.mainMenuStrip.Name = "mainMenuStrip";
