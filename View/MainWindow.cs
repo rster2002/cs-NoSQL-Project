@@ -21,6 +21,7 @@ namespace View {
             LoadView(new LoginView(this));
 
             mainMenuStrip.Visible = false;
+            this.Text = "NoDesk";
         }
 
         public void LoadView(UserControl userControl) {
@@ -46,6 +47,10 @@ namespace View {
             LoadView(new UserManagement());
         }
 
+        private void ArchiveToolStripMenuItem_Click(object sender, EventArgs e) {
+            LoadView(new ArchiveView());
+        }
+
         private void DashboardToolStripMenuItem_Click(object sender, EventArgs e) {
             LoadView(new DashboardComponent());
         }
@@ -55,10 +60,6 @@ namespace View {
 
             mainMenuStrip.Visible = false;
             LoadView(new LoginView(this));
-        }
-
-        private void ArchiveToolStripMenuItem_Click(object sender, EventArgs e) {
-            LoadView(new ArchiveView());
         }
     }
 }
