@@ -66,7 +66,7 @@
             // columnHeader3
             // 
             this.columnHeader3.Text = "Date reported";
-            this.columnHeader3.Width = 95;
+            this.columnHeader3.Width = 193;
             // 
             // columnHeader4
             // 
