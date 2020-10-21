@@ -11,14 +11,14 @@ using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
 namespace View.components {
-    public partial class DashboardComponent : UserControl {
+    public partial class DashboardView : UserControl {
         private TicketService ticketService = new TicketService();
-        public DashboardComponent() {
+        public DashboardView() {
             InitializeComponent();
             FillDashboard();
         }
 
-        public DashboardComponent(IContainer container) {
+        public DashboardView(IContainer container) {
             container.Add(this);
 
             InitializeComponent();

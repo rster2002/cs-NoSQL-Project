@@ -24,7 +24,7 @@ namespace View.views {
 
             loginComponent.OnLogin += (s, e) => {
                 mainWindow.ShowMenuControls(true);
-                mainWindow.LoadView(new DashboardComponent());
+                mainWindow.LoadView(new DashboardView());
             };
 
             centerPanel.Controls.Add(loginComponent);

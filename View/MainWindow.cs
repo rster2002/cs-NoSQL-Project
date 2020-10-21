@@ -54,11 +54,11 @@ namespace View {
         }
 
         private void ArchiveToolStripMenuItem_Click(object sender, EventArgs e) {
-            LoadView(new ArchiveComponent());
+            LoadView(new ArchiveView());
         }
 
         private void DashboardToolStripMenuItem_Click(object sender, EventArgs e) {
-            LoadView(new DashboardComponent());
+            LoadView(new DashboardView());
         }
         
         private void LogoutToolStripMenuItemOnClick(object sender, EventArgs e) {

@@ -229,14 +229,17 @@
             // 
             // confirmButton
             // 
+            this.confirmButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(155)))), ((int)(((byte)(213)))));
             this.confirmButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.confirmButton.Enabled = false;
+            this.confirmButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.confirmButton.ForeColor = System.Drawing.Color.White;
             this.confirmButton.Location = new System.Drawing.Point(107, 371);
             this.confirmButton.Name = "confirmButton";
             this.confirmButton.Size = new System.Drawing.Size(199, 30);
             this.confirmButton.TabIndex = 14;
             this.confirmButton.Text = "Confirm";
-            this.confirmButton.UseVisualStyleBackColor = true;
+            this.confirmButton.UseVisualStyleBackColor = false;
             this.confirmButton.Click += new System.EventHandler(this.ConfirmButtonOnClick);
             // 
             // cancelButton

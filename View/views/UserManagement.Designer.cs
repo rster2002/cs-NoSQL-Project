@@ -120,13 +120,15 @@
             // btnAddUser
             // 
             this.btnAddUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.btnAddUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(155)))), ((int)(((byte)(213)))));
             this.btnAddUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAddUser.FlatAppearance.BorderColor = System.Drawing.Color.GreenYellow;
-            this.btnAddUser.Location = new System.Drawing.Point(737, 0);
+            this.btnAddUser.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(155)))), ((int)(((byte)(213)))));
+            this.btnAddUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddUser.ForeColor = System.Drawing.Color.White;
+            this.btnAddUser.Location = new System.Drawing.Point(539, 0);
             this.btnAddUser.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddUser.Name = "btnAddUser";
-            this.btnAddUser.Size = new System.Drawing.Size(116, 20);
+            this.btnAddUser.Size = new System.Drawing.Size(314, 23);
             this.btnAddUser.TabIndex = 2;
             this.btnAddUser.Text = "+ ADD NEW USER";
             this.btnAddUser.UseVisualStyleBackColor = false;

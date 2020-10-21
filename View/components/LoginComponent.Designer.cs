@@ -49,7 +49,7 @@
             this.loginComponentTLP.Controls.Add(this.lblwarning, 1, 5);
             this.loginComponentTLP.Dock = System.Windows.Forms.DockStyle.Fill;
             this.loginComponentTLP.Location = new System.Drawing.Point(0, 0);
-            this.loginComponentTLP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.loginComponentTLP.Margin = new System.Windows.Forms.Padding(2);
             this.loginComponentTLP.Name = "loginComponentTLP";
             this.loginComponentTLP.RowCount = 7;
             this.loginComponentTLP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
@@ -68,6 +68,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LogLBLTitle.AutoSize = true;
+            this.LogLBLTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogLBLTitle.Location = new System.Drawing.Point(105, 0);
             this.LogLBLTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LogLBLTitle.Name = "LogLBLTitle";
@@ -107,6 +108,7 @@
             this.TBpassword.Size = new System.Drawing.Size(134, 20);
             this.TBpassword.TabIndex = 2;
             this.TBpassword.UseSystemPasswordChar = true;
+            this.TBpassword.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBpassword_KeyUp);
             // 
             // label2
             // 
@@ -124,13 +126,16 @@
             this.BtnLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(155)))), ((int)(((byte)(213)))));
+            this.BtnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnLogin.ForeColor = System.Drawing.Color.White;
             this.BtnLogin.Location = new System.Drawing.Point(105, 296);
-            this.BtnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.BtnLogin.Name = "BtnLogin";
             this.BtnLogin.Size = new System.Drawing.Size(134, 98);
             this.BtnLogin.TabIndex = 5;
             this.BtnLogin.Text = "Login";
-            this.BtnLogin.UseVisualStyleBackColor = true;
+            this.BtnLogin.UseVisualStyleBackColor = false;
             this.BtnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
             // 
             // lblwarning
@@ -150,7 +155,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.loginComponentTLP);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "LoginComponent";
             this.Size = new System.Drawing.Size(346, 396);
             this.loginComponentTLP.ResumeLayout(false);

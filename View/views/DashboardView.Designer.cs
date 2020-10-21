@@ -1,5 +1,5 @@
 ﻿namespace View.components {
-    partial class DashboardComponent {
+    partial class DashboardView {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -31,12 +31,12 @@
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint3 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 2D);
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.lbl_info = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // chart1
             // 
-            this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chart1.BackColor = System.Drawing.SystemColors.Control;
             this.chart1.BorderlineColor = System.Drawing.SystemColors.Control;
@@ -51,17 +51,17 @@
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            series1.Color = System.Drawing.Color.FromArgb(((int) (((byte) (255)))), ((int) (((byte) (192)))), ((int) (((byte) (128)))));
             series1.Legend = "Legend1";
             series1.Name = "Incidents";
             dataPoint1.Color = System.Drawing.Color.Silver;
-            dataPoint1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataPoint1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             dataPoint1.IsValueShownAsLabel = false;
             dataPoint1.IsVisibleInLegend = true;
             dataPoint1.Label = "";
             dataPoint1.LabelAngle = 0;
             dataPoint1.LegendText = "Solved Indicents";
-            dataPoint2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(191)))), ((int)(((byte)(128)))));
+            dataPoint2.Color = System.Drawing.Color.FromArgb(((int) (((byte) (255)))), ((int) (((byte) (191)))), ((int) (((byte) (128)))));
             dataPoint2.LegendText = "Unsolved Incidents";
             dataPoint3.Color = System.Drawing.Color.Red;
             dataPoint3.LegendText = "Incidents past deadline";
@@ -76,7 +76,7 @@
             // lbl_info
             // 
             this.lbl_info.AutoSize = true;
-            this.lbl_info.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_info.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.lbl_info.Location = new System.Drawing.Point(3, 250);
             this.lbl_info.Name = "lbl_info";
             this.lbl_info.Size = new System.Drawing.Size(69, 18);
@@ -90,7 +90,7 @@
             this.Name = "DashboardComponent";
             this.Size = new System.Drawing.Size(403, 341);
             this.Load += new System.EventHandler(this.DashboardComponent_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
