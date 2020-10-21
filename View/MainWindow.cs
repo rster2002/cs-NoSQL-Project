@@ -54,7 +54,7 @@ namespace View {
         }
 
         private void ArchiveToolStripMenuItem_Click(object sender, EventArgs e) {
-            LoadView(new ArchiveView());
+            LoadView(new ArchiveComponent());
         }
 
         private void DashboardToolStripMenuItem_Click(object sender, EventArgs e) {

@@ -136,7 +136,9 @@
             // 
             // ticketListViewTargetPanel
             // 
-            this.ticketListViewTargetPanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ticketListViewTargetPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ticketListViewTargetPanel.Location = new System.Drawing.Point(406, 0);
             this.ticketListViewTargetPanel.Name = "ticketListViewTargetPanel";
             this.ticketListViewTargetPanel.Size = new System.Drawing.Size(390, 352);
