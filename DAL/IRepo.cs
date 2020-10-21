@@ -25,6 +25,7 @@ namespace DAL {
         // Delete
         void Delete(string id);
         void Delete(T entity);
-        void Delete(Func<T, bool> func);
+        void DeleteMultiple(Expression<Func<T, bool>> expression);
+        void DeleteMultiple(T[] entities);
     }
 }

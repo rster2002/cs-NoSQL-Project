@@ -15,6 +15,5 @@ namespace Service {
         public void AddUser(User user) => UserRepo.Add(user);
 
         public void SaveUser(User user) => UserRepo.Update(user);
-        
     }
 }

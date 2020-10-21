@@ -8,6 +8,7 @@ namespace View.views {
 
         private User user;
         private UserService userService;
+        private UserSession userSession = UserSession.GetInstance();
         public AddUserForm() {
             InitializeComponent();
 
@@ -16,6 +17,7 @@ namespace View.views {
         }
 
         private void btnAdd_Click(object sender, EventArgs e) {
+            Random random = new Random();
 
             if(txtUsername.Text != "" && txtFirstName.Text != "" && txtLastName.Text != "" && cmbType.Text != "" && txtEmail.Text != "" && txtPhoneNumber.Text != "" && cmbLocation.Text != "" && txtPassword.Text != "") {
 
@@ -24,7 +26,6 @@ namespace View.views {
                 user.LastName = txtLastName.Text;
                 user.Email = txtEmail.Text;
                 user.PhoneNumber = txtPhoneNumber.Text;    
-                user.PasswordHash = txtPassword.Text;
 
                 switch (cmbType.SelectedItem) {
                     case "Normal":
@@ -49,6 +50,9 @@ namespace View.views {
                         user.LocationBranch = LocationBranch.HQ;
                         break;
                 }
+
+                user.Salt = random.Next(0, 10000000);
+                user.PasswordHash = userSession.Encrypt(txtPassword.Text, user.Salt);
 
                 userService.AddUser(user);
 

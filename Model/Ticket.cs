@@ -51,5 +51,13 @@ namespace Model {
 
             return comparasonDatetime > dueDate;
         }
+
+        public static string CSVHeader() {
+            return "DateReported;Subject;TypeOfIncident;ReportedByUser;Priority;Deadline;Description;OpenStatus";
+        }
+
+        public string CSVData() {
+            return $"{DateReported};{Subject.Replace(';', ',')};{TypeOfIncident};{ReportedByUser.Username.Replace(';', ',')};{Priority};{Deadline};{Description.Replace(';', ',')};{OpenStatus}";
+        }
     }
 }

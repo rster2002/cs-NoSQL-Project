@@ -25,10 +25,11 @@
         private void InitializeComponent() {
             this.mainPanel = new System.Windows.Forms.Panel();
             this.mainMenuStrip = new System.Windows.Forms.MenuStrip();
-            this.dashboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.DashboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ticketsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ArchiveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,9 +45,10 @@
             // 
             this.mainMenuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.mainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dashboardToolStripMenuItem,
+            this.DashboardToolStripMenuItem,
             this.ticketsToolStripMenuItem,
             this.usersToolStripMenuItem,
+            this.ArchiveToolStripMenuItem,
             this.logoutToolStripMenuItem});
             this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.mainMenuStrip.Name = "mainMenuStrip";
@@ -54,11 +56,12 @@
             this.mainMenuStrip.TabIndex = 1;
             this.mainMenuStrip.Text = "menuStrip1";
             // 
-            // dashboardToolStripMenuItem
+            // DashboardToolStripMenuItem
             // 
-            this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
-            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
-            this.dashboardToolStripMenuItem.Text = "Dashboard";
+            this.DashboardToolStripMenuItem.Name = "DashboardToolStripMenuItem";
+            this.DashboardToolStripMenuItem.Size = new System.Drawing.Size(116, 29);
+            this.DashboardToolStripMenuItem.Text = "Dashboard";
+            this.DashboardToolStripMenuItem.Click += new System.EventHandler(this.DashboardToolStripMenuItem_Click);
             // 
             // ticketsToolStripMenuItem
             // 
@@ -80,6 +83,13 @@
             this.logoutToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.LogoutToolStripMenuItemOnClick);
+            //
+            // ArchiveToolStripMenuItem
+            // 
+            this.ArchiveToolStripMenuItem.Name = "ArchiveToolStripMenuItem";
+            this.ArchiveToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.ArchiveToolStripMenuItem.Text = "Archive";
+            this.ArchiveToolStripMenuItem.Click += new System.EventHandler(this.ArchiveToolStripMenuItem_Click);
             // 
             // MainWindow
             // 
@@ -89,7 +99,7 @@
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.mainMenuStrip);
             this.Name = "MainWindow";
-            this.Text = "Form1";
+            this.Text = "test";
             this.mainMenuStrip.ResumeLayout(false);
             this.mainMenuStrip.PerformLayout();
             this.ResumeLayout(false);
@@ -101,10 +111,11 @@
 
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.MenuStrip mainMenuStrip;
-        private System.Windows.Forms.ToolStripMenuItem dashboardToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem DashboardToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ticketsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ArchiveToolStripMenuItem;
     }
 }
 

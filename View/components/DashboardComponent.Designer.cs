@@ -34,6 +34,8 @@
             // 
             // chart1
             // 
+            this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.chart1.BackColor = System.Drawing.SystemColors.Control;
             this.chart1.BorderlineColor = System.Drawing.SystemColors.Control;
             chartArea1.AxisY.MajorGrid.Enabled = false;
@@ -70,7 +72,7 @@
             this.lbl_info.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_info.Location = new System.Drawing.Point(11, 223);
             this.lbl_info.Name = "lbl_info";
-            this.lbl_info.Size = new System.Drawing.Size(114, 29);
+            this.lbl_info.Size = new System.Drawing.Size(69, 18);
             this.lbl_info.TabIndex = 3;
             this.lbl_info.Text = "<ToAdd>";
             // 

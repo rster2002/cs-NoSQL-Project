@@ -26,9 +26,11 @@ namespace View.components {
 
         private void FillDashboard() {
             long totalTickets, unsolvedTickets, overdueTickets;
-            totalTickets = ticketService.GetTicketCount();
-            unsolvedTickets = ticketService.GetUnsolvedTicketCount();
-            overdueTickets = ticketService.GetPastDeadlineTicketCount();
+
+            IEnumerable<Ticket> tickets = ticketService.GetTicketsForLoggedInUser();
+            totalTickets = tickets.Count();
+            unsolvedTickets = tickets.Count(x => x.OpenStatus != OpenState.Closed);
+            overdueTickets = tickets.Count(x => x.OpenStatus != OpenState.Closed && x.DueDate < DateTime.Now);
 
             chart1.ChartAreas[0].AxisX.Enabled = AxisEnabled.False;
             chart1.Series[0].Points.AddXY("0", unsolvedTickets);
