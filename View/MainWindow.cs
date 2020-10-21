@@ -21,6 +21,7 @@ namespace View {
             LoadView(new LoginView(this));
 
             mainMenuStrip.Visible = false;
+            this.Text = "NoDesk";
         }
 
         public void LoadView(UserControl userControl) {
