@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using View.components;
 using View.views;
 
 
@@ -20,6 +21,7 @@ namespace View {
             LoadView(new LoginView(this));
 
             mainMenuStrip.Visible = false;
+            this.Text = "NoDesk";
         }
 
         public void LoadView(UserControl userControl) {
@@ -47,6 +49,17 @@ namespace View {
 
         private void ArchiveToolStripMenuItem_Click(object sender, EventArgs e) {
             LoadView(new ArchiveView());
+        }
+      
+        private void DashboardToolStripMenuItem_Click(object sender, EventArgs e) {
+            LoadView(new DashboardComponent());
+        }
+        
+        private void LogoutToolStripMenuItemOnClick(object sender, EventArgs e) {
+            userSession.Logout();
+
+            mainMenuStrip.Visible = false;
+            LoadView(new LoginView(this));
         }
     }
 }

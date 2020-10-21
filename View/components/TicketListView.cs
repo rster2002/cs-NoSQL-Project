@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model;
+using System.Windows.Data;
 
 namespace View.components {
     public partial class TicketListView: UserControl {
@@ -32,7 +33,7 @@ namespace View.components {
             InitializeComponent();
             RefreshList();
             lvwColumnSorter = new ListViewColumnSorter();
-            this.ticketsListView.ListViewItemSorter = lvwColumnSorter;
+            ticketsListView.ListViewItemSorter = lvwColumnSorter;
         }
 
         public event EventHandler<TicketSelectedEventArgs> OnTicketSelectedEvent;
@@ -81,17 +82,18 @@ namespace View.components {
         }
 
         private void TicketsListView_SelectedIndexChanged(object sender, ColumnClickEventArgs e) {
-            if (e.Column == lvwColumnSorter.SortColumn) {
-                if (lvwColumnSorter.Order == SortOrder.Ascending) {
-                    lvwColumnSorter.Order = SortOrder.Descending;
+             
+                if (e.Column == lvwColumnSorter.SortColumn) {
+                    if (lvwColumnSorter.Order == SortOrder.Ascending) {
+                        lvwColumnSorter.Order = SortOrder.Descending;
+                    } else {
+                        lvwColumnSorter.Order = SortOrder.Ascending;
+                    }
                 } else {
+                    lvwColumnSorter.SortColumn = e.Column;
                     lvwColumnSorter.Order = SortOrder.Ascending;
                 }
-            } else {
-                lvwColumnSorter.SortColumn = e.Column;
-                lvwColumnSorter.Order = SortOrder.Ascending;
-            }
-            this.ticketsListView.Sort();
+            ticketsListView.Sort();
         }
     }
 }

@@ -1,11 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Windows.Forms;
+using Model;
 
 public class ListViewColumnSorter: IComparer {
     private int ColumnToSort;
-
     private SortOrder OrderOfSort;
-
     private CaseInsensitiveComparer ObjectCompare;
 
     public ListViewColumnSorter() {
@@ -14,20 +14,48 @@ public class ListViewColumnSorter: IComparer {
         ObjectCompare = new CaseInsensitiveComparer();
     }
     public int Compare(object x, object y) {
-        int compareResult;
-        ListViewItem listviewX, listviewY;
-        listviewX = (ListViewItem) x;
-        listviewY = (ListViewItem) y;
-        compareResult = ObjectCompare.Compare(listviewX.SubItems[ColumnToSort].Text, listviewY.SubItems[ColumnToSort].Text);
-        if (OrderOfSort == SortOrder.Ascending) {
-            return compareResult;
-        } else if (OrderOfSort == SortOrder.Descending) {
-            return (-compareResult);
+        if (ColumnToSort == 2) {
+            int returnVal;
+            try {
+                DateTime firstDate = DateTime.Parse(((ListViewItem) x).SubItems[ColumnToSort].Text);
+                DateTime secondDate = DateTime.Parse(((ListViewItem) y).SubItems[ColumnToSort].Text);
+
+                returnVal = DateTime.Compare(firstDate, secondDate);
+            } catch {
+                returnVal = String.Compare(((ListViewItem) x).SubItems[ColumnToSort].Text, ((ListViewItem) y).SubItems[ColumnToSort].Text);
+            }
+            if (OrderOfSort == SortOrder.Descending)
+                returnVal *= -1;
+            return returnVal;
+        } else if(ColumnToSort == 4) {
+            int compareResult;
+            Priority listviewX, listviewY;
+            listviewX = (Priority) Enum.Parse(typeof(Priority), ((ListViewItem) x).SubItems[ColumnToSort].Text.ToString());
+            listviewY = (Priority) Enum.Parse(typeof(Priority), ((ListViewItem) y).SubItems[ColumnToSort].Text.ToString());
+            
+            compareResult = ObjectCompare.Compare(listviewX, listviewY);
+            if (OrderOfSort == SortOrder.Ascending) {
+                return compareResult;
+            } else if (OrderOfSort == SortOrder.Descending) {
+                return (-compareResult);
+            } else {
+                return 0;
+            }
         } else {
-            return 0;
+            int compareResult;
+            ListViewItem listviewX, listviewY;
+            listviewX = (ListViewItem) x;
+            listviewY = (ListViewItem) y;
+            compareResult = ObjectCompare.Compare(listviewX.SubItems[ColumnToSort].Text, listviewY.SubItems[ColumnToSort].Text);
+            if (OrderOfSort == SortOrder.Ascending) {
+                return compareResult;
+            } else if (OrderOfSort == SortOrder.Descending) {
+                return (-compareResult);
+            } else {
+                return 0;
+            }
         }
     }
-
     public int SortColumn {
         set {
             ColumnToSort = value;
@@ -36,7 +64,6 @@ public class ListViewColumnSorter: IComparer {
             return ColumnToSort;
         }
     }
-
     public SortOrder Order {
         set {
             OrderOfSort = value;
